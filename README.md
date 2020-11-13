@@ -1,12 +1,12 @@
 # CMU Interactive Data Science Final Project
 
-* **Online URL**: TODO
+* **Online URL**: https://share.streamlit.io/cmu-ids-2020/fp-vectorization/main
 * **Team members**:
   * Contact person: yuxiluo@andrew.cmu.edu (Yuxi Luo)
   * shaobog@andrew.cmu.edu (Shaobo Guan)
   * xinyulin@andrew.cmu.edu (Xinyu Lin)
   * xinwenl@andrew.cmu.edu (Xinwen Liu)
-* **Track**: TODO (one of Narrative, Model, or Interactive Visualization/Application)
+* **Track**: Narrative
 
 ## Work distribution
 
@@ -16,8 +16,8 @@ Update towards the end of the project.
 
 ### Proposal
 
-- [ ] The URL at the top of this readme needs to point to your application online. It should also list the names of the team members.
-- [ ] A completed proposal. The contact should submit it as a PDF on Canvas.
+- [x] The URL at the top of this readme needs to point to your application online. It should also list the names of the team members.
+- [x] A completed proposal. The contact should submit it as a PDF on Canvas.
 
 ### Design review
 
