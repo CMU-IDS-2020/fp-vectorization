@@ -19,8 +19,9 @@ def draw_title():
         Team members:
         - Xinwen Liu (xinwenl), Xinyu Lin (xinyulin), Yuxi Luo (yuxiluo), Shaobo Guan (shaobog)
 
-        Github repository:
-        - [vectorization](https://github.com/CMU-IDS-2020/fp-vectorization)
+        [Github repository](https://github.com/CMU-IDS-2020/fp-vectorization)
+
+        [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/documents/DesignReview.pdf)
     """
     )
 
@@ -28,8 +29,8 @@ def draw_narrative():
     # call other functions for narrative here
     st.markdown(
     """
-        ### Narrative
-        
+        ## Visualization
+
     """
     )
     st.write("Donation request count; Proposed donation sum; Proposed donation mean")
@@ -45,8 +46,9 @@ def draw_model():
     # call other functions for model here
     st.markdown(
     """
-        ### Model: Project description <-> fully funded duration
-        [here goes description]
+        ## Model: Predicting project fully-funded status
+
+        Please see [logit.ipynb](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/modeling/logit.ipynb) for current state of our model
     """
     )
     return
@@ -60,7 +62,7 @@ def draw_v1():
 
     sum_avg_df = pd.read_csv("data/avg_loc_time_join.csv")
 
-    year = st.slider("Year", 
+    year = st.slider("Year",
                      min_value = 2013,
                      max_value = 2018,
                      step = 1)
@@ -68,14 +70,14 @@ def draw_v1():
     # A slider filter
     # year_slider = alt.binding_range(min=2013, max=2018, step=1)
     # slider_selection = alt.selection_single(bind=year_slider, fields=['Post year'])
-    
+
     # get count agg by the given year range
     cnt_filter_df = cnt_df[cnt_df['Post year'] == year]
-    
+
     sum_avg_filter_df = sum_avg_df[sum_avg_df['Post Year'] == year]
     #make a map
-    states = alt.topo_feature(data.us_10m.url, 'states')  
-    
+    states = alt.topo_feature(data.us_10m.url, 'states')
+
     count_v = alt.Chart(
         states
     ).mark_geoshape(
@@ -155,7 +157,7 @@ def draw_v3():
     slider = alt.binding_range(min=2013, max=2018, step=1)
     select_year = alt.selection_single(name="Year", fields=['Year'],
                                        bind=slider, init={'Year': 2013})
-    
+
     mean_ = alt.Chart(df).mark_bar().encode(
         x=alt.X('Donor State:N'),
         y=alt.Y('Mean:Q'),
@@ -174,7 +176,7 @@ def draw_v3():
     ).transform_filter(
         select_year
     )
-    
+
     st.write(mean_)
     st.write(sum_)
     return
@@ -199,7 +201,7 @@ def draw_v4():
         width=500,
         height=500
     )
-        
+
     r_histo = alt.Chart(resource).mark_bar().encode(
         x= "Project Resource Category:N",
         y= "Project Cost:Q",

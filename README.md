@@ -21,8 +21,8 @@ Update towards the end of the project.
 
 ### Design review
 
-- [ ] Develop a prototype of your project.
-- [ ] Create a 5 minute video to demonstrate your project and lists any question you have for the course staff. The contact should submit the video on Canvas.
+- [x] Develop a prototype of your project.
+- [x] Create a 5 minute video to demonstrate your project and lists any question you have for the course staff. The contact should submit the video on Canvas.
 
 ### Final deliverables
 
