@@ -1,0 +1,307 @@
+State,Post year,Count,id
+Alabama,2013,1109,1
+Alabama,2014,2049,1
+Alabama,2015,2148,1
+Alabama,2016,4109,1
+Alabama,2017,4039,1
+Alabama,2018,2153,1
+Alaska,2013,633,2
+Alaska,2014,621,2
+Alaska,2015,584,2
+Alaska,2016,727,2
+Alaska,2017,796,2
+Alaska,2018,387,2
+Arizona,2013,2382,4
+Arizona,2014,2719,4
+Arizona,2015,5319,4
+Arizona,2016,5231,4
+Arizona,2017,4859,4
+Arizona,2018,2222,4
+Arkansas,2013,1419,5
+Arkansas,2014,1886,5
+Arkansas,2015,2049,5
+Arkansas,2016,2207,5
+Arkansas,2017,2210,5
+Arkansas,2018,1116,5
+California,2013,23020,6
+California,2014,28556,6
+California,2015,28493,6
+California,2016,34080,6
+California,2017,36411,6
+California,2018,16547,6
+Colorado,2013,1563,8
+Colorado,2014,1780,8
+Colorado,2015,2007,8
+Colorado,2016,2623,8
+Colorado,2017,2907,8
+Colorado,2018,1394,8
+Connecticut,2013,1566,9
+Connecticut,2014,1758,9
+Connecticut,2015,2166,9
+Connecticut,2016,4128,9
+Connecticut,2017,4354,9
+Connecticut,2018,2595,9
+Delaware,2013,429,10
+Delaware,2014,462,10
+Delaware,2015,618,10
+Delaware,2016,812,10
+Delaware,2017,735,10
+Delaware,2018,367,10
+District of Columbia,2013,793,11
+District of Columbia,2014,987,11
+District of Columbia,2015,858,11
+District of Columbia,2016,1182,11
+District of Columbia,2017,1270,11
+District of Columbia,2018,476,11
+Florida,2013,8572,12
+Florida,2014,8962,12
+Florida,2015,9492,12
+Florida,2016,13089,12
+Florida,2017,16552,12
+Florida,2018,8303,12
+Georgia,2013,4620,13
+Georgia,2014,5937,13
+Georgia,2015,6842,13
+Georgia,2016,8391,13
+Georgia,2017,8630,13
+Georgia,2018,4343,13
+Hawaii,2013,1158,15
+Hawaii,2014,1013,15
+Hawaii,2015,1356,15
+Hawaii,2016,1005,15
+Hawaii,2017,1743,15
+Hawaii,2018,736,15
+Idaho,2013,501,16
+Idaho,2014,1028,16
+Idaho,2015,1035,16
+Idaho,2016,1498,16
+Idaho,2017,1658,16
+Idaho,2018,728,16
+Illinois,2013,5786,17
+Illinois,2014,7453,17
+Illinois,2015,7631,17
+Illinois,2016,9857,17
+Illinois,2017,12397,17
+Illinois,2018,5285,17
+Indiana,2013,2746,18
+Indiana,2014,3531,18
+Indiana,2015,4278,18
+Indiana,2016,6465,18
+Indiana,2017,5884,18
+Indiana,2018,3024,18
+Iowa,2013,631,19
+Iowa,2014,853,19
+Iowa,2015,910,19
+Iowa,2016,1650,19
+Iowa,2017,1233,19
+Iowa,2018,550,19
+Kansas,2013,528,20
+Kansas,2014,799,20
+Kansas,2015,787,20
+Kansas,2016,1403,20
+Kansas,2017,1502,20
+Kansas,2018,888,20
+Kentucky,2013,1079,21
+Kentucky,2014,1262,21
+Kentucky,2015,1404,21
+Kentucky,2016,2715,21
+Kentucky,2017,2925,21
+Kentucky,2018,1421,21
+Louisiana,2013,2507,22
+Louisiana,2014,2622,22
+Louisiana,2015,2854,22
+Louisiana,2016,5418,22
+Louisiana,2017,4588,22
+Louisiana,2018,1838,22
+Maine,2013,841,23
+Maine,2014,952,23
+Maine,2015,699,23
+Maine,2016,1163,23
+Maine,2017,1589,23
+Maine,2018,895,23
+Maryland,2013,1667,24
+Maryland,2014,2153,24
+Maryland,2015,2541,24
+Maryland,2016,3391,24
+Maryland,2017,3636,24
+Maryland,2018,1462,24
+Massachusetts,2013,2249,25
+Massachusetts,2014,3311,25
+Massachusetts,2015,4060,25
+Massachusetts,2016,5533,25
+Massachusetts,2017,7655,25
+Massachusetts,2018,3594,25
+Michigan,2013,2842,26
+Michigan,2014,4241,26
+Michigan,2015,4211,26
+Michigan,2016,7300,26
+Michigan,2017,7551,26
+Michigan,2018,3769,26
+Minnesota,2013,1043,27
+Minnesota,2014,1377,27
+Minnesota,2015,1618,27
+Minnesota,2016,2659,27
+Minnesota,2017,3314,27
+Minnesota,2018,1560,27
+Mississippi,2013,1113,28
+Mississippi,2014,1535,28
+Mississippi,2015,1725,28
+Mississippi,2016,2963,28
+Mississippi,2017,2937,28
+Mississippi,2018,1425,28
+Missouri,2013,2113,29
+Missouri,2014,2974,29
+Missouri,2015,3165,29
+Missouri,2016,5836,29
+Missouri,2017,5559,29
+Missouri,2018,2740,29
+Montana,2013,228,30
+Montana,2014,421,30
+Montana,2015,392,30
+Montana,2016,545,30
+Montana,2017,541,30
+Montana,2018,403,30
+Nebraska,2013,380,31
+Nebraska,2014,439,31
+Nebraska,2015,460,31
+Nebraska,2016,766,31
+Nebraska,2017,678,31
+Nebraska,2018,342,31
+Nevada,2013,1676,32
+Nevada,2014,1630,32
+Nevada,2015,1785,32
+Nevada,2016,2978,32
+Nevada,2017,3264,32
+Nevada,2018,1765,32
+New Hampshire,2013,346,33
+New Hampshire,2014,494,33
+New Hampshire,2015,559,33
+New Hampshire,2016,841,33
+New Hampshire,2017,917,33
+New Hampshire,2018,473,33
+New Jersey,2013,2024,34
+New Jersey,2014,3174,34
+New Jersey,2015,3026,34
+New Jersey,2016,5065,34
+New Jersey,2017,6196,34
+New Jersey,2018,3553,34
+New Mexico,2013,500,35
+New Mexico,2014,678,35
+New Mexico,2015,709,35
+New Mexico,2016,1177,35
+New Mexico,2017,1446,35
+New Mexico,2018,714,35
+New York,2013,9039,36
+New York,2014,10985,36
+New York,2015,12295,36
+New York,2016,16857,36
+New York,2017,17640,36
+New York,2018,9237,36
+North Carolina,2013,5470,37
+North Carolina,2014,7140,37
+North Carolina,2015,7525,37
+North Carolina,2016,11425,37
+North Carolina,2017,12330,37
+North Carolina,2018,6044,37
+North Dakota,2013,100,38
+North Dakota,2014,129,38
+North Dakota,2015,179,38
+North Dakota,2016,381,38
+North Dakota,2017,266,38
+North Dakota,2018,148,38
+Ohio,2013,1843,39
+Ohio,2014,2412,39
+Ohio,2015,3213,39
+Ohio,2016,5247,39
+Ohio,2017,6692,39
+Ohio,2018,3545,39
+Oklahoma,2013,3275,40
+Oklahoma,2014,3367,40
+Oklahoma,2015,4235,40
+Oklahoma,2016,5315,40
+Oklahoma,2017,5680,40
+Oklahoma,2018,2816,40
+Oregon,2013,1644,41
+Oregon,2014,2062,41
+Oregon,2015,2557,41
+Oregon,2016,2896,41
+Oregon,2017,2781,41
+Oregon,2018,1241,41
+Pennsylvania,2013,2964,42
+Pennsylvania,2014,4047,42
+Pennsylvania,2015,4779,42
+Pennsylvania,2016,6827,42
+Pennsylvania,2017,7721,42
+Pennsylvania,2018,3705,42
+Rhode Island,2013,454,44
+Rhode Island,2014,519,44
+Rhode Island,2015,488,44
+Rhode Island,2016,618,44
+Rhode Island,2017,777,44
+Rhode Island,2018,370,44
+South Carolina,2013,2662,45
+South Carolina,2014,3447,45
+South Carolina,2015,7057,45
+South Carolina,2016,8523,45
+South Carolina,2017,8982,45
+South Carolina,2018,3845,45
+South Dakota,2013,224,46
+South Dakota,2014,335,46
+South Dakota,2015,399,46
+South Dakota,2016,652,46
+South Dakota,2017,727,46
+South Dakota,2018,519,46
+Tennessee,2013,2411,47
+Tennessee,2014,3218,47
+Tennessee,2015,3098,47
+Tennessee,2016,3721,47
+Tennessee,2017,3653,47
+Tennessee,2018,1716,47
+Texas,2013,9495,48
+Texas,2014,11189,48
+Texas,2015,12595,48
+Texas,2016,15944,48
+Texas,2017,22650,48
+Texas,2018,10764,48
+Utah,2013,2220,49
+Utah,2014,2478,49
+Utah,2015,3161,49
+Utah,2016,3791,49
+Utah,2017,3961,49
+Utah,2018,1355,49
+Vermont,2013,160,50
+Vermont,2014,180,50
+Vermont,2015,204,50
+Vermont,2016,235,50
+Vermont,2017,330,50
+Vermont,2018,119,50
+Virginia,2013,2087,51
+Virginia,2014,3253,51
+Virginia,2015,3445,51
+Virginia,2016,4508,51
+Virginia,2017,5166,51
+Virginia,2018,2578,51
+Washington,2013,1856,53
+Washington,2014,3432,53
+Washington,2015,4866,53
+Washington,2016,5388,53
+Washington,2017,5613,53
+Washington,2018,2354,53
+West Virginia,2013,508,54
+West Virginia,2014,627,54
+West Virginia,2015,716,54
+West Virginia,2016,1286,54
+West Virginia,2017,1196,54
+West Virginia,2018,673,54
+Wisconsin,2013,1484,55
+Wisconsin,2014,2029,55
+Wisconsin,2015,1911,55
+Wisconsin,2016,3847,55
+Wisconsin,2017,5492,55
+Wisconsin,2018,2090,55
+Wyoming,2013,77,56
+Wyoming,2014,121,56
+Wyoming,2015,103,56
+Wyoming,2016,146,56
+Wyoming,2017,337,56
+Wyoming,2018,161,56
