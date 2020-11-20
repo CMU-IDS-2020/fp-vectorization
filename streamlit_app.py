@@ -21,7 +21,7 @@ def draw_title():
 
         [Github repository](https://github.com/CMU-IDS-2020/fp-vectorization)
 
-        [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/documents/DesignReview.pdf)
+        [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/DesignReview.pdf)
     """
     )
 
