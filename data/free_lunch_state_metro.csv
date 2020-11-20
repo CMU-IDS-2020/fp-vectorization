@@ -1,0 +1,202 @@
+School State,School Metro Type,School Percentage Free Lunch
+Alabama,rural,65.9236276849642
+Alabama,suburban,56.62359550561798
+Alabama,town,64.44715447154472
+Alabama,urban,68.38111888111888
+Alaska,rural,67.53211009174312
+Alaska,suburban,37.625
+Alaska,town,39.723404255319146
+Alaska,urban,55.34117647058824
+Arizona,rural,63.559322033898304
+Arizona,suburban,48.97478991596638
+Arizona,town,65.62650602409639
+Arizona,urban,61.39160839160839
+Arkansas,rural,67.97819314641744
+Arkansas,suburban,61.57272727272727
+Arkansas,town,65.75833333333334
+Arkansas,urban,65.4439461883408
+California,rural,61.33574879227053
+California,suburban,57.43026706231454
+California,town,67.9109131403118
+California,urban,65.21908226077224
+Colorado,rural,44.82389937106918
+Colorado,suburban,40.25058004640371
+Colorado,town,53.79338842975206
+Colorado,urban,60.693069306930695
+Connecticut,rural,17.844155844155843
+Connecticut,suburban,35.11716621253406
+Connecticut,town,48.166666666666664
+Connecticut,urban,68.53716216216216
+Delaware,rural,38.37837837837838
+Delaware,suburban,45.291666666666664
+Delaware,town,46.63157894736842
+Delaware,urban,69.10810810810811
+District of Columbia,rural,
+District of Columbia,urban,87.53191489361703
+Florida,rural,59.978813559322035
+Florida,suburban,63.17777777777778
+Florida,town,65.9
+Florida,urban,63.57644394110985
+Georgia,rural,66.01886792452831
+Georgia,suburban,60.651162790697676
+Georgia,town,72.94318181818181
+Georgia,urban,77.13065326633166
+Hawaii,rural,73.8125
+Hawaii,suburban,48.42307692307692
+Hawaii,town,68.54545454545455
+Hawaii,urban,52.83018867924528
+Idaho,rural,57.04237288135593
+Idaho,suburban,49.82857142857143
+Idaho,town,53.27884615384615
+Idaho,urban,49.31460674157304
+Illinois,rural,43.54617414248021
+Illinois,suburban,49.63068181818182
+Illinois,town,51.92881355932203
+Illinois,urban,77.376
+Indiana,rural,47.55897435897436
+Indiana,suburban,46.199367088607595
+Indiana,town,54.342592592592595
+Indiana,urban,70.71457489878543
+Iowa,rural,38.12925170068027
+Iowa,suburban,26.12162162162162
+Iowa,town,47.326388888888886
+Iowa,urban,56.54929577464789
+Kansas,rural,50.71923076923077
+Kansas,suburban,36.278260869565216
+Kansas,town,61.1413612565445
+Kansas,urban,70.97309417040358
+Kentucky,rural,62.921630094043884
+Kentucky,suburban,48.33783783783784
+Kentucky,town,57.50898203592814
+Kentucky,urban,60.5353982300885
+Louisiana,rural,71.93589743589743
+Louisiana,suburban,68.28813559322033
+Louisiana,town,76.1
+Louisiana,urban,79.05390835579514
+Maine,rural,54.292682926829265
+Maine,suburban,31.841269841269842
+Maine,town,56.75
+Maine,urban,53.74
+Maryland,rural,37.689320388349515
+Maryland,suburban,51.06803797468354
+Maryland,town,47.473684210526315
+Maryland,urban,70.92993630573248
+Massachusetts,rural,23.729166666666668
+Massachusetts,suburban,40.529347826086955
+Massachusetts,town,40.785714285714285
+Massachusetts,urban,73.25227963525836
+Michigan,rural,55.523711340206184
+Michigan,suburban,49.83232323232323
+Michigan,town,51.10952380952381
+Michigan,urban,66.87479406919275
+Minnesota,rural,44.8550185873606
+Minnesota,suburban,40.67515923566879
+Minnesota,town,40.54761904761905
+Minnesota,urban,62.888475836431226
+Mississippi,rural,76.91158536585365
+Mississippi,suburban,58.333333333333336
+Mississippi,town,83.0
+Mississippi,urban,86.17525773195877
+Missouri,rural,59.252
+Missouri,suburban,44.65645514223195
+Missouri,town,57.06204379562044
+Missouri,urban,70.95677233429394
+Montana,rural,47.37956204379562
+Montana,suburban,57.0
+Montana,town,50.693333333333335
+Montana,urban,43.75471698113208
+Nebraska,rural,44.36752136752137
+Nebraska,suburban,37.208955223880594
+Nebraska,town,52.507936507936506
+Nebraska,urban,63.333333333333336
+Nevada,rural,51.166666666666664
+Nevada,suburban,63.971830985915496
+Nevada,town,48.026315789473685
+Nevada,urban,60.04651162790697
+New Hampshire,rural,30.801980198019802
+New Hampshire,suburban,21.635416666666668
+New Hampshire,town,41.68571428571428
+New Hampshire,urban,51.65217391304348
+New Jersey,rural,27.076923076923077
+New Jersey,suburban,40.69809825673534
+New Jersey,town,33.03703703703704
+New Jersey,urban,81.76029962546816
+New Mexico,rural,81.91596638655462
+New Mexico,suburban,76.58181818181818
+New Mexico,town,73.4
+New Mexico,urban,68.31720430107526
+New York,rural,38.84776119402985
+New York,suburban,35.65127020785219
+New York,town,43.530386740331494
+New York,urban,76.7355816226784
+North Carolina,rural,65.82518337408312
+North Carolina,suburban,49.80522565320665
+North Carolina,town,70.7554347826087
+North Carolina,urban,61.63098591549296
+North Dakota,rural,37.626506024096386
+North Dakota,suburban,32.7
+North Dakota,town,35.22222222222222
+North Dakota,urban,33.674418604651166
+Ohio,rural,47.9685393258427
+Ohio,suburban,45.96532438478747
+Ohio,town,52.28636363636364
+Ohio,urban,75.53456221198157
+Oklahoma,rural,66.98669623059867
+Oklahoma,suburban,53.92890995260664
+Oklahoma,town,67.64255319148936
+Oklahoma,urban,78.89138576779027
+Oregon,rural,62.52173913043478
+Oregon,suburban,51.96116504854369
+Oregon,town,65.78865979381443
+Oregon,urban,56.48765432098765
+Pennsylvania,rural,43.383597883597886
+Pennsylvania,suburban,39.92028135990621
+Pennsylvania,town,48.1219512195122
+Pennsylvania,urban,81.19469026548673
+Rhode Island,rural,19.94736842105263
+Rhode Island,suburban,48.46153846153846
+Rhode Island,urban,70.44736842105263
+South Carolina,rural,69.75853658536586
+South Carolina,suburban,52.339233038348084
+South Carolina,town,74.9
+South Carolina,urban,65.6046511627907
+South Dakota,rural,48.55952380952381
+South Dakota,suburban,26.666666666666668
+South Dakota,town,36.23529411764706
+South Dakota,urban,48.08620689655172
+Tennessee,rural,66.3025641025641
+Tennessee,suburban,51.5625
+Tennessee,town,63.42424242424242
+Tennessee,urban,75.23063063063063
+Texas,rural,57.32848232848233
+Texas,suburban,54.673925838728664
+Texas,town,64.82848837209302
+Texas,urban,70.66017563955708
+Utah,rural,51.65277777777778
+Utah,suburban,36.04811715481171
+Utah,town,44.116883116883116
+Utah,urban,53.79874213836478
+Vermont,rural,43.580357142857146
+Vermont,suburban,38.642857142857146
+Vermont,town,43.8
+Vermont,urban,35.69230769230769
+Virginia,rural,49.496350364963504
+Virginia,suburban,37.5
+Virginia,town,55.357798165137616
+Virginia,urban,57.36492890995261
+Washington,rural,59.4080459770115
+Washington,suburban,44.06434782608696
+Washington,town,60.9
+Washington,urban,54.110441767068274
+West Virginia,rural,58.669950738916256
+West Virginia,suburban,51.44329896907217
+West Virginia,town,56.671875
+West Virginia,urban,54.36470588235294
+Wisconsin,rural,43.07826086956522
+Wisconsin,suburban,31.019801980198018
+Wisconsin,town,42.169724770642205
+Wisconsin,urban,61.526785714285715
+Wyoming,rural,41.4390243902439
+Wyoming,suburban,75.0
+Wyoming,town,45.0
+Wyoming,urban,49.91891891891892
