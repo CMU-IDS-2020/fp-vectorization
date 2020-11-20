@@ -196,8 +196,8 @@ def draw_v4():
     ).transform_filter(
         select_year
     ).properties(
-        width=300,
-        height=300
+        width=500,
+        height=500
     )
         
     r_histo = alt.Chart(resource).mark_bar().encode(
@@ -210,8 +210,8 @@ def draw_v4():
     ).transform_filter(
         select_year
     ).properties(
-        width=400,
-        height=300
+        width=500,
+        height=500
     )
     st.write(g_histo)
     st.write(r_histo)
