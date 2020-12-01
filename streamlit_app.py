@@ -1,7 +1,42 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import datetime
 from vega_datasets import data
+
+####################### global variables #######################
+
+subcategories = ['Literacy', 'Mathematics', 'Literature & Writing', 'Special Needs',
+   'Applied Sciences', 'Health & Wellness', 'Visual Arts',
+   'Environmental Science', 'Early Development', 'ESL',
+   'Health & Life Science', 'Music', 'History & Geography',
+   'Character Education', 'College & Career Prep', 'Other',
+   'Gym & Fitness', 'Performing Arts', 'Team Sports', 'Social Sciences',
+   'Care & Hunger', 'Warmth', 'Extracurricular', 'Foreign Languages',
+   'Civics & Government', 'Parent Involvement', 'Financial Literacy',
+   'Nutrition Education', 'Community Service', 'Economics']
+
+resources = ['Supplies', 'Technology', 'Books', 'Computers & Tablets',
+   'Educational Kits & Games', 'Instructional Technology',
+   'Reading Nooks, Desks & Storage', 'Flexible Seating', 'Trips',
+   'Classroom Basics', 'Other', 'Art Supplies', 'Lab Equipment',
+   'Sports & Exercise Equipment', 'Food, Clothing & Hygiene',
+   'Musical Instruments', 'Visitors']
+
+feature_words = ['student', 'school', 'learn', 'classroom', 'help', 'work', 'read',
+   'love', 'day', 'class', 'skill', 'book', 'technology', 'time', 'one',
+   'math', 'material', 'grade', 'children', 'different', 'project',
+   'teach', 'like', 'world', 'create', 'best', 'learners', 'science',
+   'education', 'community', 'language', 'home', 'activities', 'free',
+   'access', 'opportunity', 'life', 'first', 'fun', 'hard', 'environment',
+   'lunch', 'resource', 'experience', 'opportunities', 'excited',
+   'diverse', 'eager', 'play', 'art', 'challenge', 'creative', 'goal',
+   'music', 'amazing', 'social', 'poverty', 'games', 'hands-on',
+   'research', 'knowledge', 'engaging', 'safe', 'computer', 'literacy',
+   'reduced', 'however', 'comfortable', 'band', 'instrument', 'musical',
+   'healthy', 'breakfast', 'hungry', 'team', 'sport', 'hurricane',
+   'health', 'volleyball', 'basketball', 'soccer', 'college', 'museum',
+   'paint', 'activity']
 
 ####################### helper functions #######################
 
@@ -47,15 +82,43 @@ def draw_model():
     st.markdown(
     """
         ## Model: Predicting project fully-funded status
-
-        Please see [logit.ipynb](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/modeling/logit.ipynb) for current state of our model
     """
     )
+
+    model_proj_desc_interaction()
+
     return
 
-####################### end of helper functions #######################
+####################### model sections  #######################
+
+def model_proj_desc_interaction():
+    st.markdown(
+    """
+        ### Predicting based on entered project description
+    """
+    )
+
+    # https://docs.streamlit.io/en/latest/api.html#streamlit.beta_columns
+    description = st.text_input("Project description") #, value="Input your project description here!")
+    col1, col2, col3 = st.beta_columns([1, 1, 1])
+    start = col1.date_input("Project start date", datetime.date(2017, 1, 1))
+    end = col2.date_input("Project end date", datetime.date(2017, 5, 1))
+    cost = col3.number_input("Project cost")
+
+    col1, col2 = st.beta_columns([1, 1])
+    subcat = col1.multiselect("Project category", subcategories)
+    rescat = col2.multiselect("Resource category", resources)
+
+    submitted = st.button("Submit project proposal")
+    if submitted:
+        st.markdown(
+        """
+            > Running model prediction
+        """
+        )
 
 ####################### visualization sections  #######################
+
 def draw_v1():
     # slider for selecting specific years
     cnt_df = pd.read_csv("data/loc_time_join.csv")
@@ -218,9 +281,16 @@ def draw_v4():
     st.write(g_histo)
     st.write(r_histo)
     return
-#################### end of visualization sections ####################
 
 
-draw_title()
-draw_narrative()
-draw_model()
+####################### main #######################
+
+sections = {
+    'Description': draw_title,
+    'Narrative': draw_narrative,
+    'Model': draw_model,
+}
+option = st.sidebar.selectbox(
+    "Sections", list(sections.keys())
+)
+sections[option]()
