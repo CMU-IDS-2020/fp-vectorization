@@ -1,8 +1,12 @@
+import re
+import datetime
+import numpy as np
 import streamlit as st
 import pandas as pd
 import altair as alt
-import datetime
+from joblib import dump, load
 from vega_datasets import data
+from sklearn.linear_model import LogisticRegression
 
 ####################### global variables #######################
 
@@ -37,6 +41,18 @@ feature_words = ['student', 'school', 'learn', 'classroom', 'help', 'work', 'rea
    'healthy', 'breakfast', 'hungry', 'team', 'sport', 'hurricane',
    'health', 'volleyball', 'basketball', 'soccer', 'college', 'museum',
    'paint', 'activity']
+
+english_numbers = ["One", "Two", "Three", "Four", "Five",
+                   "Six", "Seven", "Eight", "Nine", "Ten",
+                   "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+                   "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
+                   "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety",
+                   "Thousand", "Million", "Billion"]
+
+sample = "Imagine having tables and having to stand to play and complete work activities. I  teach preschool special education in an urban school district.  Most of the students are on free and reduced lunch.  My students are between the ages of 3-5 years old.  My students have a variety of disabilities including Autism, Down Syndrome, and language impairments. With the chairs, my students will be able to sit down to play with table toys like Legos and stringing beads.  My students will also be able to sit to complete work activities such as cutting with scissors, tracing their names and completing letter and number crafts. Donations will help my children sit and concentrate on their work.  My students will be better prepared for kindergarten.  They will be able to sit and learn basic skills such as colors, shapes, numbers and letters."
+
+regex_numbers = re.compile("(\d|(" + "|".join(map(re.escape, english_numbers)) + "))")
+clf = load('modeling/logit.joblib')
 
 ####################### helper functions #######################
 
@@ -99,7 +115,7 @@ def model_proj_desc_interaction():
     )
 
     # https://docs.streamlit.io/en/latest/api.html#streamlit.beta_columns
-    description = st.text_input("Project description") #, value="Input your project description here!")
+    description = st.text_area("Project description", value=sample) #, value="Input your project description here!")
     col1, col2, col3 = st.beta_columns([1, 1, 1])
     start = col1.date_input("Project start date", datetime.date(2017, 1, 1))
     end = col2.date_input("Project end date", datetime.date(2017, 5, 1))
@@ -116,6 +132,33 @@ def model_proj_desc_interaction():
             > Running model prediction
         """
         )
+
+        # process the input to form a single-row dataframe for prediction
+        df = pd.read_pickle("modeling/features.pkl")
+        df = df.append(pd.Series(), ignore_index = True)
+        df['X_essay_len'] = len(description)
+        df['X_essay_?!'] = description.count('\\?') + description.count('\\!')
+        df['X_essay_numbers'] = len(re.findall(regex_numbers, description))
+        for s in subcategories:
+            df["SUBCAT " + s] = description.count(s)
+        for r in resources:
+            df["RESCAT " + r] = description.count(r)
+        df['Project Cost'] = cost
+        df['Project Valid Time'] = (end-start).days
+        df['Project Year 2016'] = start.year == 2016
+        df['Project Year 2017'] = start.year == 2017
+        df['Teacher Project Posted Sequence'] = 1 # default?
+        for w in feature_words:
+            df[w] = description.count(w)
+        # print(df)
+
+        # compute the model prediction result here
+        predicted = clf.predict(df)[0]
+        if predicted:
+            st.write("Model prediction: this project proposal can be fully funded")
+        else:
+            st.write("Model prediction: this project proposal can not be fully funded")
+
 
 ####################### visualization sections  #######################
 
