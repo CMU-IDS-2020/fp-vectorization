@@ -1,3 +1,5 @@
 *.csv
 *.pkl
 .ipynb_checkpoints/
+
+!modeling/features.pkl
