@@ -127,11 +127,14 @@ def model_proj_desc_interaction():
 
     submitted = st.button("Submit project proposal")
     if submitted:
-        st.markdown(
-        """
-            > Running model prediction
-        """
-        )
+        if cost == 0:
+            st.markdown("> Please enter project cost!")
+        if subcat == []:
+            st.markdown("> Please enter project category!")
+        if rescat == []:
+            st.markdown("> Please enter resource category!")
+        if cost == 0 or subcat == [] or rescat == []:
+            return
 
         # process the input to form a single-row dataframe for prediction
         df = pd.read_pickle("modeling/features.pkl")
