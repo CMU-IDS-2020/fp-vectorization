@@ -10,7 +10,6 @@ from sklearn.linear_model import LogisticRegression
 import streamlit.components.v1 as components
 from htbuilder import HtmlElement, div, span, styles
 from htbuilder.units import px, rem, em
-# from annotated_text import annotated_text
 
 ####################### global variables #######################
 
@@ -215,7 +214,7 @@ javascript_highlight_head = """
 
                 </style>
 """
-
+# this piece of html and javascript is customized from https://stackoverflow.com/questions/304837/javascript-user-selection-highlighting
 javascript_highlight_script = """
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script type="text/javascript">
@@ -601,6 +600,7 @@ def model_user_choose_donate():
     """
     )
     def card_information(title, subcat, rescat, cost):
+        # this piece of html is customized from https://www.w3schools.com/howto/howto_css_column_cards.asp
         style = """
                 %s
                 <style>div.card{background-color:#d0f5f3;border-radius: 5px;box-shadow: 0 0 0 0 rgba(0,0,0,0.2);transition: 0.3s;}</style>
