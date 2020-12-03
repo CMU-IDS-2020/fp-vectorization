@@ -375,6 +375,8 @@ def draw_narrative():
     draw_v3()
     draw_v4()
     draw_v5()
+    draw_v6()
+    draw_v7()
     return
 
 def draw_model():
@@ -771,9 +773,9 @@ def draw_v1():
 
 def draw_v2():
     df = pd.read_csv("data/free_lunch_state_metro.csv")
-    v2 = alt.Chart(df).mark_point().encode(
-            x='School State:N',
-            y='School Metro Type:N',
+    v2 = alt.Chart(df).mark_circle().encode(
+            x=alt.X('School State:N'),
+            y=alt.Y('School Metro Type:N'),
             size='School Percentage Free Lunch:Q',
             color='School Percentage Free Lunch:Q',
             tooltip=['School State',
@@ -817,14 +819,14 @@ def draw_v3():
 def draw_v4():
     grade=pd.read_csv("data/grade_by_year.csv")
     grade = grade[grade['Project Grade Level Category'] != 'unknown']
-    grade = grade[grade['Post year'] != 2018]
+    # grade = grade[grade['Post year'] != 2018]
     resource = pd.read_csv("data/resource_by_year.csv")
-    resource = resource[resource['Post year'] != 2018]
+    # resource = resource[resource['Post year'] != 2018]
     
     grade_selector = alt.selection_single(fields=['Project Grade Level Category'])
     resource_selector = alt.selection_single(fields=['Project Resource Category'])
 
-    slider = alt.binding_range(min=2013, max=2017, step=1)
+    slider = alt.binding_range(min=2013, max=2018, step=1)
     select_year = alt.selection_single(name="Year", fields=['Post year'],
                                        bind=slider, init={'Post year': 2017})
     g_histo = alt.Chart(grade).mark_bar().encode(
@@ -936,8 +938,49 @@ def draw_v5():
     st.write(v5)
 
 def draw_v6():
-    pass
+    rate = pd.read_csv('data/successful_rate_grade.csv')
+    v6 = alt.Chart(rate).mark_bar().encode(
+        x = 'Project Grade Level Category:N',
+        y=alt.Y('Rate:Q', stack="normalize"),
+        color='Project Current Status:N',
+        tooltip=["Project Grade Level Category:N",
+                  "Rate:Q",
+                  "Project Current Status:N"]
+    ).properties(
+        width=300,
+        height=400
+    )
+    st.write(v6)
+
+def draw_v7():
+    before_rate = pd.read_csv('data/successful_rate_before_2017_resource.csv')
+    after_rate = pd.read_csv('data/successful_rate_2017_resource.csv')
     
+    before = alt.Chart(before_rate).mark_bar().encode(
+        x = alt.X('Project Resource Category:N'),
+        y=alt.Y('Rate:Q', stack="normalize"),
+        color='Project Current Status:N',
+        tooltip=["Project Resource Category:N",
+                  "Rate:Q",
+                  "Project Current Status:N"]
+    ).properties(
+        width=300,
+        height=400
+    )
+
+    after = alt.Chart(after_rate).mark_bar().encode(
+        x = 'Project Resource Category:N',
+        y=alt.Y('Rate:Q', stack="normalize"),
+        color='Project Current Status:N',
+        tooltip=["Project Resource Category:N",
+                  "Rate:Q",
+                  "Project Current Status:N"]
+    ).properties(
+        width=300,
+        height=400
+    )
+    
+    st.write(before | after)
     ####################### main #######################
 
 sections = {
