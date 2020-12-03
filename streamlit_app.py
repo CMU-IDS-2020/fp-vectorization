@@ -374,6 +374,7 @@ def draw_narrative():
     st.write("Mean of donation records; Sum of donation records")
     draw_v3()
     draw_v4()
+    draw_v5()
     return
 
 def draw_model():
@@ -815,44 +816,129 @@ def draw_v3():
 
 def draw_v4():
     grade=pd.read_csv("data/grade_by_year.csv")
-    resource=pd.read_csv("data/resource_by_year.csv")
+    grade = grade[grade['Project Grade Level Category'] != 'unknown']
+    grade = grade[grade['Post year'] != 2018]
+    resource = pd.read_csv("data/resource_by_year.csv")
+    resource = resource[resource['Post year'] != 2018]
+    
+    grade_selector = alt.selection_single(fields=['Project Grade Level Category'])
+    resource_selector = alt.selection_single(fields=['Project Resource Category'])
 
-    slider = alt.binding_range(min=2013, max=2018, step=1)
+    slider = alt.binding_range(min=2013, max=2017, step=1)
     select_year = alt.selection_single(name="Year", fields=['Post year'],
-                                       bind=slider, init={'Post year': 2018})
+                                       bind=slider, init={'Post year': 2017})
     g_histo = alt.Chart(grade).mark_bar().encode(
         x= "Project Grade Level Category:N",
         y= "Project Cost:Q",
-        color=alt.Color("Project Grade Level Category:N"),
+        color=alt.condition(grade_selector,
+                        "Project Grade Level Category:N",
+                        alt.value('lightgray')),
         tooltip=["Project Grade Level Category:N", "Project Cost:Q"]
     ).add_selection(
-        select_year
+        select_year,
+        grade_selector
     ).transform_filter(
         select_year
     ).properties(
         width=500,
         height=500
     )
+
+    g_line = alt.Chart(grade).mark_line().encode(
+        x = 'Post year:N',
+        y = 'Project Cost:Q',
+        color = alt.Color("Project Grade Level Category:N"),
+        tooltip=["Project Cost:Q"]
+    ).add_selection(
+        grade_selector
+    ).transform_filter(
+        grade_selector    
+    ).properties(
+        width=500,
+        height=500
+    )     
 
     r_histo = alt.Chart(resource).mark_bar().encode(
         x= "Project Resource Category:N",
         y= "Project Cost:Q",
-        color=alt.Color("Project Resource Category:N"),
+        color=alt.condition(resource_selector,
+                        "Project Resource Category:N",
+                        alt.value('lightgray')),
         tooltip=["Project Resource Category:N", "Project Cost:Q"]
     ).add_selection(
-        select_year
+        select_year,
+        resource_selector
     ).transform_filter(
         select_year
     ).properties(
         width=500,
         height=500
     )
-    st.write(g_histo)
-    st.write(r_histo)
+        
+    r_line = alt.Chart(resource).mark_line().encode(
+        x = 'Post year:N',
+        y = 'Project Cost:Q',
+        color = alt.Color("Project Resource Category:N"),
+        tooltip=["Project Resource Category:N", "Project Cost:Q"]
+    ).add_selection(
+        resource_selector
+    ).transform_filter(
+        resource_selector    
+    ).properties(
+        width=500,
+        height=500
+    )  
+        
+    st.write(g_histo | g_line)
+    st.write(r_histo | r_line)
     return
 
+def draw_v5():
+    rate = pd.read_csv('data/successful_rate_year.csv')
+    
+    nearest = alt.selection(type='single', nearest=True, on='mouseover',
+                            fields=['Post year'], empty='none')    
+    
+    line = alt.Chart(rate).mark_line().encode(
+            alt.X('Post year:N'),
+            alt.Y('Rate:Q', title='Rate(%)'),
+            color = 'Project Current Status:N'
+    )
+    
+    selectors = alt.Chart(rate).mark_point().encode(
+        x='Post year:N',
+        opacity=alt.value(0),
+    ).add_selection(
+        nearest
+    )
+        
+    points = line.mark_point().encode(
+        opacity=alt.condition(nearest, alt.value(1), alt.value(0))
+    )
+    
+    text = line.mark_text(align='left', dx=5, dy=-5).encode(
+        text=alt.condition(nearest, 'Rate:Q', alt.value(' '), format='.2f')
+    )
+    
+    rules = alt.Chart(rate).mark_rule(color='gray').encode(
+        x='Post year:N',
+    ).transform_filter(
+        nearest
+    )
+        
+    v5 = alt.layer(
+        line, selectors, points, rules, text
+    ).properties(
+        width=1000,
+        height=500
+    )
+    
+    st.write(v5)
 
-####################### main #######################
+def draw_v6():
+    pass
+    
+    ####################### main #######################
 
 sections = {
     'Description': draw_title,
