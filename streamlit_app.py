@@ -439,6 +439,9 @@ def draw_narrative():
     draw_v5()
     draw_v6()
     draw_v7()
+    draw_v8()
+    draw_v9()
+    draw_v10()
     return
 
 def draw_model():
@@ -791,17 +794,17 @@ def draw_v1_modified():
     avg_v = alt.Chart(
         states
     ).mark_geoshape(
-        stroke='gray',
+        stroke='black',
         strokeWidth=1
     ).encode(
         color = alt.Color('Mean Cost:Q',
                           scale=alt.Scale(scheme='greenblue')),
-        tooltip=['State:N', 'Mean Cost:Q'],
-        stroke=alt.condition(highlight, alt.value('red'), alt.value('gray')),
+        tooltip=['State:N', 'Mean Cost:Q', 'Sum Cost:Q'],
+        stroke=alt.condition(highlight, alt.value('red'), alt.value('black')),
         strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(3), alt.StrokeWidthValue(1)),
     ).transform_lookup(
         lookup = 'id',
-        from_ = alt.LookupData(avg_df, 'id', ['Mean Cost', 'State'])
+        from_ = alt.LookupData(avg_df, 'id', ['Mean Cost', 'Sum Cost', 'State'])
     ).add_selection(
         select_state,
         highlight
@@ -813,19 +816,11 @@ def draw_v1_modified():
     )
     
     avg_time_v = alt.Chart(avg_time_df).mark_area(
-        color=alt.Gradient(
-            gradient='linear',
-            stops=[alt.GradientStop(color='white', offset=0),
-                   alt.GradientStop(color='darkgreen', offset=1)],
-            x1=1,
-            x2=1,
-            y1=1,
-            y2=0
-        )      
+        color="lightblue",
+        line=True
     ).encode(
         x = 'Post Year:N',
         y = 'Average:Q',
-        # color = alt.Color("Project Resource Category:N"),
         tooltip=['Post Year:N', 'Average:Q']
     ).add_selection(
         select_state
@@ -833,10 +828,26 @@ def draw_v1_modified():
         select_state
     ).properties(
         width=500,
-        height=500
+        height=300
+    )
+        
+    sum_time_v = alt.Chart(avg_time_df).mark_area(
+        color="lightyellow",
+        line=True
+    ).encode(
+        x = 'Post Year:N',
+        y = 'Sum:Q',
+        tooltip=['Post Year:N', 'Sum:Q']
+    ).add_selection(
+        select_state
+    ).transform_filter(
+        select_state
+    ).properties(
+        width=500,
+        height=301
     ) 
         
-    st.write(avg_v & avg_time_v)
+    st.write(avg_v & (avg_time_v | sum_time_v))
     
     
 
@@ -1136,6 +1147,80 @@ def draw_v7():
     )
 
     st.write(before | after)
+    
+def draw_v8():
+    rate = pd.read_csv('data/successful_rate_metro.csv')
+    v6 = alt.Chart(rate).mark_bar().encode(
+        y = 'School Metro Type:N',
+        x = alt.X('Rate:Q', stack="normalize"),
+        color='Project Current Status:N',
+        tooltip=["School Metro Type:N",
+                  "Rate:Q",
+                  "Project Current Status:N"]
+    ).properties(
+        width=700,
+        height=300
+    )
+    st.write(v6)
+
+def draw_v9():
+    state_df = pd.read_csv("data/successful_rate_state.csv")
+    
+    highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
+    states = alt.topo_feature(data.us_10m.url, 'states')
+    v_9 = alt.Chart(
+        states
+    ).mark_geoshape(
+        stroke='black',
+        strokeWidth=1
+    ).encode(
+        color = alt.Color('Fully Funded Rate:Q',
+                          scale=alt.Scale(scheme='greenblue')),
+        tooltip=['State:N', 'Fully Funded Rate:Q'],
+        stroke=alt.condition(highlight, alt.value('red'), alt.value('black')),
+        strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(3), alt.StrokeWidthValue(1)),
+    ).transform_lookup(
+        lookup = 'id',
+        from_ = alt.LookupData(state_df, 'id', ['Fully Funded Rate', 'State'])
+    ).add_selection(
+        highlight
+    ).project(
+        type='albersUsa'
+    ).properties(
+        width=1000,
+        height=700
+    )
+    
+    st.write(v_9)
+    
+def draw_v10():
+    categoryNames = ['[0,100)', '[100,200)', '[100,200)',
+                     '[200,300)', '[200,300)', '[300,400)',
+                     '[300,400)', '[400,500)', '[400,500)',
+                     '[500,600)', '[500,600)', '[600,700)',
+                     '[600,700)', '[700,800)', '[700,800)',
+                     '[800,900)', '[800,900)', '[900,1000)',
+                     '[900,1000)', '[1000,2000)', '[1000,2000)',
+                     '[2000,3000)', '[2000,3000)', '[3000,4000)',
+                     '[3000,4000)', '[4000,5000)', '[4000,5000)',
+                     '[5000,6000)', '[5000,6000)', '[6000,7000)',
+                     '[6000,7000)', '[7000,8000)', '[7000,8000)',
+                     '[8000,9000)', '[8000,9000)', '[9000,10000)',
+                     '[9000,10000)', '[10000,inf)', '[10000,inf)']
+    rate = pd.read_csv('data/successful_rate_cost_interval.csv')
+    v6 = alt.Chart(rate).mark_bar().encode(
+        y = alt.Y('Cost Interval:N',sort=categoryNames),
+        x = alt.X('Rate:Q', stack="normalize"),
+        color='Project Current Status:N',
+        tooltip=["Cost Interval:N",
+                  "Rate:Q",
+                  "Project Current Status:N"]
+    ).properties(
+        width=700,
+        height=300
+    )
+    st.write(v6)
+
     ####################### main #######################
 
 sections = {
