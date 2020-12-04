@@ -368,7 +368,8 @@ def draw_narrative():
     """
     )
     st.write("Donation request count; Proposed donation sum; Proposed donation mean")
-    draw_v1()
+    draw_v1_modified()
+    # draw_v1()
     st.write("Free lunch percentage of schools which requested donation at least once")
     draw_v2()
     st.write("Mean of donation records; Sum of donation records")
@@ -691,6 +692,69 @@ def model_user_choose_donate():
 
 ####################### visualization sections  #######################
 
+def draw_v1_modified():
+    avg_time_df = pd.read_csv("data/avg_loc_time_join.csv")
+    avg_df = pd.read_csv("data/loc_cost_avg_join.csv")
+    select_state = alt.selection_single(name="State",
+                                        fields=['State'],
+                                        init={'State': 'California'})
+    
+    states = alt.topo_feature(data.us_10m.url, 'states')
+    
+    highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
+    
+    avg_v = alt.Chart(
+        states
+    ).mark_geoshape(
+        stroke='gray',
+        strokeWidth=1
+    ).encode(
+        color = alt.Color('Mean Cost:Q',
+                          scale=alt.Scale(scheme='greenblue')),
+        tooltip=['State:N', 'Mean Cost:Q'],
+        stroke=alt.condition(highlight, alt.value('red'), alt.value('gray')),
+        strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(3), alt.StrokeWidthValue(1)),
+    ).transform_lookup(
+        lookup = 'id',
+        from_ = alt.LookupData(avg_df, 'id', ['Mean Cost', 'State'])
+    ).add_selection(
+        select_state,
+        highlight
+    ).project(
+        type='albersUsa'
+    ).properties(
+        width=1000,
+        height=700
+    )
+    
+    avg_time_v = alt.Chart(avg_time_df).mark_area(
+        color=alt.Gradient(
+            gradient='linear',
+            stops=[alt.GradientStop(color='white', offset=0),
+                   alt.GradientStop(color='darkgreen', offset=1)],
+            x1=1,
+            x2=1,
+            y1=1,
+            y2=0
+        )      
+    ).encode(
+        x = 'Post Year:N',
+        y = 'Average:Q',
+        # color = alt.Color("Project Resource Category:N"),
+        tooltip=['Post Year:N', 'Average:Q']
+    ).add_selection(
+        select_state
+    ).transform_filter(
+        select_state
+    ).properties(
+        width=500,
+        height=500
+    ) 
+        
+    st.write(avg_v & avg_time_v)
+    
+    
+
 def draw_v1():
     # slider for selecting specific years
     cnt_df = pd.read_csv("data/loc_time_join.csv")
@@ -712,23 +776,29 @@ def draw_v1():
     sum_avg_filter_df = sum_avg_df[sum_avg_df['Post Year'] == year]
     #make a map
     states = alt.topo_feature(data.us_10m.url, 'states')
+    
+    highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
 
     count_v = alt.Chart(
         states
     ).mark_geoshape(
-        stroke='#aaa',
-        strokeWidth=0.25
+        stroke='gray',
+        strokeWidth=1
     ).encode(
         color = 'Count:Q',
-        tooltip=['State:N', 'Count:Q']
+        tooltip=['State:N', 'Count:Q'],
+        stroke=alt.condition(highlight, alt.value('red'), alt.value('gray')),
+        strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(2), alt.StrokeWidthValue(1)),
     ).transform_lookup(
         lookup = 'id',
         from_ = alt.LookupData(cnt_filter_df, 'id', ['Count', 'State'])
+    ).add_selection(
+        highlight
     ).project(
         type='albersUsa'
     ).properties(
-        width=400,
-        height=200
+        width=500,
+        height=500
     )
 
     sum_v = alt.Chart(
@@ -940,15 +1010,15 @@ def draw_v5():
 def draw_v6():
     rate = pd.read_csv('data/successful_rate_grade.csv')
     v6 = alt.Chart(rate).mark_bar().encode(
-        x = 'Project Grade Level Category:N',
-        y=alt.Y('Rate:Q', stack="normalize"),
+        y = 'Project Grade Level Category:N',
+        x = alt.X('Rate:Q', stack="normalize"),
         color='Project Current Status:N',
         tooltip=["Project Grade Level Category:N",
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=300,
-        height=400
+        width=700,
+        height=300
     )
     st.write(v6)
 
@@ -957,8 +1027,8 @@ def draw_v7():
     after_rate = pd.read_csv('data/successful_rate_2017_resource.csv')
     
     before = alt.Chart(before_rate).mark_bar().encode(
-        x = alt.X('Project Resource Category:N'),
-        y=alt.Y('Rate:Q', stack="normalize"),
+        y = alt.Y('Project Resource Category:N'),
+        x=alt.X('Rate:Q', stack="normalize"),
         color='Project Current Status:N',
         tooltip=["Project Resource Category:N",
                   "Rate:Q",
@@ -969,8 +1039,8 @@ def draw_v7():
     )
 
     after = alt.Chart(after_rate).mark_bar().encode(
-        x = 'Project Resource Category:N',
-        y=alt.Y('Rate:Q', stack="normalize"),
+        y = 'Project Resource Category:N',
+        x = alt.X('Rate:Q', stack="normalize"),
         color='Project Current Status:N',
         tooltip=["Project Resource Category:N",
                   "Rate:Q",
