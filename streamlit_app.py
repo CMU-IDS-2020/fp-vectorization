@@ -524,6 +524,26 @@ def draw_narrative():
     return
 
 def draw_model():
+    st.markdown(
+    """
+    In the previous section, we explored what features of a project affect the fully funded rate. To help teachers formulate better project proposal, we build a machine learning model that predicts whether a project can get fully funded based on project proposal information.
+    
+    This model includes the following features:
+    * length of the project description
+    * number of '?' and '!' in the project description
+    * number of numerical expressions in the project description, such as 2, 4, tweenty, one hundered
+    * 85 high frequency words, such as student, learn, hungry, healthy
+    * project target cost
+    * project year
+    * project valid duration (expiration date - start date)
+    * project category
+    * category of resource required
+
+    This model uses Logistic Regression. We downsample the majority class to make the dataset balance, and then we split the dataset into training set (70%) and test set (30%), and calculated accuracy on the test set. The current model accuracy is 64.8%.
+
+    On this page, you can interact with our model.
+    """
+    )
     # call other functions for model here
     st.markdown(
     """
@@ -602,7 +622,8 @@ def model_proj_desc_interaction():
             st.write("Here are some suggestions on the key words to be included in your project proposal: ")
             st.markdown('**' + ', '.join(calc_10_words(description)[:10]) + '**')
             # st.write(clf.predict_proba(df))
-        st.write("Here is how our model feels about your project proposal")
+        # st.write("Here is how our model feels about your project proposal")
+        st.info("Here we show how the model makes this prediction. The parts that encourage the model to predict fully-funded are highlighted in green, and the parts that discourages the model to predict fully-funded are highlighted in red. The darker the color, the more it influences the model.")
         highlight_essay(description)
 
 def calc_10_words(description):
@@ -651,7 +672,7 @@ def model_user_choose_donate():
                     </div></div>
                 </div>
                 %s
-        """ % (style, "Title", title, "Category", subcat, "Resource", rescat, "Target", cost, javascript_highlight_script)
+        """ % (style, "Title", title, "Project Category", subcat, "Resource Category", rescat, "Target", cost, javascript_highlight_script)
         components.html(card, height=113)
 
     def card_description(text, h):
@@ -675,7 +696,7 @@ def model_user_choose_donate():
     cost1 = '$509.89'
     fully_funded1 = True
     height1 = 320
-    title2 = "There's An App For That! (Part 2)"
+    title2 = "There's An App For That!"
     essay2 = 'My first grade students have an enthusiasm for learning that is contagious! Unfortunately, our district does not have the financial resources to provide access to some of the most up to date technology. My students deserve to have access to the same types of technology as their peers. I teach first grade and know that our students are eager to learn but lack some much needed educational items. Approximately 75% of the students in our district live in poverty.\n\nWe are a Title I school and also participate in the free and reduced lunch program. All of our students are eligible to receive free breakfast and lunch each school day. As a teacher, I want to provide the best educational environment and the most relevant learning experiences possible. With your help, my students will have access to current technology. They will have the opportunity to interact with various learning apps and programs and to receive much needed support in both literacy and math. My students will have access to the Amazon Fire tablets during both literacy and math center rotations. Students in need of additional support or remediation will receive it. My students will have the opportunity to utilize the plethora of free learning apps and programs available in the Google store. Students will also be able to create presentations for class projects and to share this learning with their families in a unique way.\n\n    Donations to this project will provide my students with access to technology that they may otherwise not have the opportunity to experience. Your support will ensure that my curious and eager learners keep pace with their peers and have an additional learning tool at their fingertips. '
     subcat2 = 'Literacy, Mathematics'
     rescat2 = 'Technology'
@@ -684,6 +705,7 @@ def model_user_choose_donate():
     height2 = 400
     sample = ["A", "B"]
     sample_choice = st.selectbox('Case', sample)
+    st.info("As you read through the project description, you can highlight the text that incentivizes you to donate. After you are done reading and highlighting, please click on the button \"Donate\" or \"Maybe Later\" to tell us your preference and compare your decision with our model! ")
     if sample_choice == "A":
         card_information(title1, subcat1, rescat1, cost1)
         card_description(essay1, height1)
@@ -702,12 +724,14 @@ def model_user_choose_donate():
             st.markdown("Looking forward to your donation in the future!")
         if sample_choice == "A":
             st.markdown("This project proposal <b>has been fully funded</b>. Our model predicts that it <b>can be</b> fully funded.", unsafe_allow_html=True)
+            st.info("Here we show how the model makes this prediction. The parts that encourage the model to predict fully-funded are highlighted in green, and the parts that discourages the model to predict fully-funded are highlighted in red. The darker the color, the more it influences the model.")
             highlight_subcategories(subcat1)
             highlight_resource_categories(rescat1)
             highlight_cost(cost1)
             highlight_essay(essay1)
         elif sample_choice == "B":
             st.markdown("This project proposal <b>has ended without being fully funded</b>. Our model predicts that it <b>cannot be</b> fully funded.", unsafe_allow_html=True)
+            st.info("Here we show how the model makes this prediction. The parts that encourage the model to predict fully-funded are highlighted in green, and the parts that discourages the model to predict fully-funded are highlighted in red. The darker the color, the more it influences the model.")
             highlight_subcategories(subcat2)
             highlight_resource_categories(rescat2)
             highlight_cost(cost2)
