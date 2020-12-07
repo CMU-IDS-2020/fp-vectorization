@@ -419,28 +419,107 @@ def draw_title():
         [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/DesignReview.pdf)
     """
     )
+    """
+        ## Background
+        What happens when the school lacks funding? Based on the data 
+        collected by the Virginia Department of Education, students have
+        fewer choices in courses, less experienced instructors, lower test 
+        scores and college enrollment in high poverty schools compared to 
+        low poverty ones. Even worse, according to the Center for American 
+        Progress, many school districts are impacted by the Covid-19 pandemic 
+        and will expect a higher budget loss in the coming years. Thus, financial 
+        support becomes increasingly important at this moment. Even though the 
+        funding itself could not be the panacea, an increasing amount of funding 
+        will offer students more educational opportunities, better supplies, as 
+        well as mental services. In order to relieve the stress and help more 
+        donors recognize the challenges public schools are currently facing, 
+        we use the datasets from DonorsChoose.org, a funding platform for public 
+        school teachers to find resources in need, to make visualizations. We 
+        would like to use our visualizations to present donors with useful 
+        information and attract more potential donors. 
+    """
 
 def draw_narrative():
     # call other functions for narrative here
     st.markdown(
     """
-        ## Visualization
-
-    """
+        # Visualization
+        In this section, we will demonstrate statistical analysis about 
+        the donation data in serveral dimensions via interactive visualizations.
+        
+        ## Donation Cost Analysis
+        
+        ### How did project cost distribute geographically?
+        
+    """    
     )
-    st.write("Donation request count; Proposed donation sum; Proposed donation mean")
     draw_v1_modified()
+    
+    st.markdown(
+    """
+        The map visualization shows the donation request from each state. The amount of donation increases as the color gets darker. One of the lighter places like Indiana has a proposed donation mean at around 602 dollars, while one of the darkest places like Wyoming has a proposed donation mean at around 874 dollars. Thus, we would like to see the reasons behind the differences among different states. Is it because some states have less state education fundings compared to the others so that they need extra fundings from the platform like DonorsChoose.org? The reality was the opposite. Based on the U.S.News (2020), the report from 2016-2017 school year showed that Vermont, New York, New Jersey, Pennsylvania and Wyoming were the top five states with the most state funding per pupil. Connecting the data to our visualization, it seems that the mean costs of donation requests from all the five states are above 760, except for Pennsylvania. Thereful, we could make the assumption that the states with darker colors may put more emphasis on education: even though they have plenty of fundings for the public schools, many teachers strive for getting better resources for their students.
+        
+        If we click on specific states, we could also see the trends of donation requests through 2013-2018, which is also interesting to have further exploration. For instance, if we take a look at the state of Hawaii, we could see the change of its average donation request and its total donation request from 2013 to 2018. These three visualizations are giving donors an overview of how much money each state needs for their public classroom projects.
+        ### How did project cost distribute with respect to various categories?
+    """  
+    )
     # draw_v1()
-    st.write("Free lunch percentage of schools which requested donation at least once")
-    draw_v2()
-    st.write("Mean of donation records; Sum of donation records")
-    draw_v3()
     draw_v4()
+    st.markdown(
+    """
+        
+    """    
+    )
+    st.markdown(
+    """
+        Understanding learners’ needs is an important aspect for donors, and we will discuss the needs based on grade level and resource category. For the grade level bar chart, we could see that the trend stays the same from the year 2013 to 2018, where grades Pre K-2 always maintain the highest project costs, then come grades 3-5, grades 6-8, and grades 9-12. Since this chart is showing the project request costs, no matter if the projects succeed or not, we could assume that lower grades need more fundings compared to higher grades, as they may need more supplies in the classroom. 
+        
+        We will take a further exploration of learners’ needs from the resource category chart. This is a similar chart showing the change of supplies throughout different years. In 2013, the order from most needed resources to least was technologies, supplies, books, others, trips, and visitors. The trend stayed in 2014 and 2015, but in 2015, the needs for other, trips, and supplies increased. In 2016, the need for supplies surged, and it even surpassed the need for technology. In 2017, more categories have been added, including instructional technology, lab experiments, computers and tablets, educational kits and games, flexible seating, clothing and hygiene, musical instruments, reading nooks, desks, storages, and sports and exercise equipment. 2017 is a transition year, where we could see how the emphasis of public schools changed. General supplies were split into several detailed categories, like flexible seating, hygiene, and reading nooks, and different types of educational technologies began to rise in public classrooms. The phenomenon could be explained by several reasons: increasing awareness of students’ physical and mental health, and the rapid development of technology. Physical health is always an important topic in schools, because students are more likely to receive high academic achievements with healthy bodies (Pennsylvania Department of Education). Similarly, as more mental crises are reported, mental health weighs the same importance as physical health, and schools start to pay extra attention to the stress, pressure and depression problems students are facing. Thus, multi-tiered systems of support are being used to intervene in students’ behaviors, and flexible seating is one of the options that could help students to create comfortable and safe environments in the classroom, and it counted as alternative seating for students who have special needs. For educational technology, as the National Education Association (NEA) supports, that “Every student needs the ability to navigate through the 24/7 information flow that today connects the global community.” Thus, many of the public schools implemented the “laptop programs,” where whole classes are provided with laptops so that teachers can experiment with online teaching and learning processes. At the same time, GoogleClassrooms and other educational platforms are introduced to support and motivate learning, and technology gradually becomes an indispensable part of the classroom. And if we scroll the graph to 2018, we could see that computers and tablets become the most needed category among all the resources.
+        ### How much money did each state donate?
+
+    """    
+    )
+    draw_v3()
+    st.markdown(
+    """
+        These two graphs show the mean and the sum of donation records. Based on the graphs, we could see that the mean donation for most of the states is around 40 to 70 dollars, with some outliers of Hawaii, North Dakota, and Idaho, where the mean donation of Hawaii reaches 100 dollars per donation. As for the sum record graph, California, New York and Texas have the most donations added together, where we can make an assumption that the people at these places put a higher emphasis on education as they are willing to donate for school projects. However, this sum may be affected by the population so there is still bias available. 
+        
+        But based on these two graphs, potential donors can have brief ideas on how the donations went on in different states, and new donors can use the donation mean chart as their reference.
+        ## Successful Rate Analysis  
+        ### Successful Rate Variation over Years
+    """    
+    )
     draw_v5()
+    st.markdown(
+    """
+        ### Successful Rate under Grade levels and Resource Categories
+    """    
+    )
     draw_v6()
     draw_v7()
+    st.markdown(
+    """
+        ### Successful Rate under Different School Metro Types
+    """    
+    )
+    draw_v2()
     draw_v8()
+    st.markdown(
+    """
+        According to the Federal Register, Child Nutrition Programs: Income Eligibility Guidelines, 
+        schools are required to serve meals at no charge to children whose household income is at or below 130 percent of the Federal poverty guidelines. Children are entitled to pay a reduced price if their household income is above 130 percent but at or below 185 percent of these guidelines. In other words, when the household income of a family reaches the poverty level or is below the guideline, the kids in the family are eligible for reduced or free lunch. Thus, the less average household income tax received by the districts, the higher percentage of free lunch offered by the public schools. In this way, we could assume that schools with higher free lunch percentages will have a higher possibility of requiring funding projects. Based on that, our visualization gives an overview of the free lunch conditions in different school metro types within each state. In general, we could suggest that schools in urban areas have a higher percentage of school lunch, indicating higher needs for funding, compared to those in rural, suburban and town. But there are some exceptions, like Wyoming, Montana, and Idaho. In addition, even though there is the bias that this visualization does not cover all the schools in the United States, we could see some of the states have darker bubbles than other states, like District of Columbia, Louisiana, Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, showing their greater percentage for free lunch, which could be interpreted as a signal for funding. 
+
+        From the second graph, we could see that urban school districts have higher success rates than other metro types. Connected with the conclusion we got above, we infer that the amount of fundings the type of schools need may affect their success rate. For example, urban schools who have a higher percentage of free lunch rate would start more projects, which may lead to a higher successful rate.
+
+        ### Successful Rate Based on States
+    """    
+    )
     draw_v9()
+    st.markdown(
+    """
+        ### Successful Rate Based on Proposed Cost Intervals
+    """    
+    )
     draw_v10()
     return
 
@@ -1217,7 +1296,7 @@ def draw_v10():
                   "Project Current Status:N"]
     ).properties(
         width=700,
-        height=300
+        height=500
     )
     st.write(v6)
 
@@ -1228,6 +1307,9 @@ sections = {
     'Narrative': draw_narrative,
     'Model': draw_model,
 }
+
+st.set_page_config(layout="wide")
+
 option = st.sidebar.selectbox(
     "Sections", list(sections.keys())
 )
