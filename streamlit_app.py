@@ -1479,6 +1479,7 @@ def draw_v6():
     v6 = alt.Chart(rate).mark_bar().encode(
         y = 'Project Grade Level Category:N',
         x = alt.X('Rate:Q', stack="normalize"),
+        order=alt.Order('Project Current Status:N', sort='descending'),
         color='Project Current Status:N',
         tooltip=["Project Grade Level Category:N",
                   "Rate:Q",
@@ -1496,6 +1497,7 @@ def draw_v7():
     before = alt.Chart(before_rate).mark_bar().encode(
         y = alt.Y('Project Resource Category:N'),
         x=alt.X('Rate:Q', stack="normalize"),
+        order=alt.Order('Project Current Status:N', sort='descending'),
         color='Project Current Status:N',
         tooltip=["Project Resource Category:N",
                   "Rate:Q",
@@ -1509,6 +1511,7 @@ def draw_v7():
         y = 'Project Resource Category:N',
         x = alt.X('Rate:Q', stack="normalize"),
         color='Project Current Status:N',
+        order=alt.Order('Project Current Status:N', sort='descending'),
         tooltip=["Project Resource Category:N",
                   "Rate:Q",
                   "Project Current Status:N"]
@@ -1524,6 +1527,7 @@ def draw_v8():
     v6 = alt.Chart(rate).mark_bar().encode(
         y = 'School Metro Type:N',
         x = alt.X('Rate:Q', stack="normalize"),
+        order=alt.Order('Project Current Status:N', sort='descending'),
         color='Project Current Status:N',
         tooltip=["School Metro Type:N",
                   "Rate:Q",
@@ -1582,6 +1586,7 @@ def draw_v10():
     v6 = alt.Chart(rate).mark_bar().encode(
         y = alt.Y('Cost Interval:N',sort=categoryNames),
         x = alt.X('Rate:Q', stack="normalize"),
+        order=alt.Order('Project Current Status:N', sort='descending'),
         color='Project Current Status:N',
         tooltip=["Cost Interval:N",
                   "Rate:Q",
