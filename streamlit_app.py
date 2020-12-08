@@ -1561,7 +1561,7 @@ def draw_v9():
         strokeWidth=1
     ).encode(
         color = alt.Color('Fully Funded Rate:Q',
-                          scale=alt.Scale(scheme='greenblue')),
+                          scale=alt.Scale(scheme='yelloworangebrown')),
         tooltip=['State:N', 'Fully Funded Rate:Q'],
         stroke=alt.condition(highlight, alt.value('red'), alt.value('black')),
         strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(3), alt.StrokeWidthValue(1)),
