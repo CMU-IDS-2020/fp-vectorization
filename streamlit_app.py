@@ -565,6 +565,7 @@ def draw_title():
     )
     """
         ## Background
+
         What happens when the school lacks funding? Based on the data
         collected by the Virginia Department of Education, students have
         fewer choices in courses, less experienced instructors, lower test
@@ -575,12 +576,21 @@ def draw_title():
         support becomes increasingly important at this moment. Even though the
         funding itself could not be the panacea, an increasing amount of funding
         will offer students more educational opportunities, better supplies, as
-        well as mental services. In order to relieve the stress and help more
+        well as mental services.
+
+        In order to relieve the stress and help more
         donors recognize the challenges public schools are currently facing,
-        we use the datasets from DonorsChoose.org, a funding platform for public
-        school teachers to find resources in need, to make visualizations. We
-        would like to use our visualizations to present donors with useful
-        information and attract more potential donors.
+        we use the datasets from [DonorsChoose.org](https://www.kaggle.com/donorschoose/io),
+        a funding platform for public school teachers to find resources in need,
+        to make visualizations. We would like to use our visualizations to present
+        donors with useful information and attract more potential donors.
+
+        In addition, observing that some of the project proposals hosted on the platform
+        might not get fully funded after the expiration date, we would like to
+        develop a model to predict whether a project can be fully-funded or not
+        based on the project proposal content. We aim to build a tool for teachers
+        to better understand what are some characteristics for projects to get
+        fully-funded, and how should they refine their project proposals.
     """
 
 def draw_narrative():
@@ -639,7 +649,7 @@ def draw_narrative():
     draw_v5()
     st.markdown(
     """
-        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools. 
+        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools.
         ### Successful Rate under Grade levels and Resource Categories
     """
     )
@@ -676,7 +686,7 @@ def draw_narrative():
     st.markdown(
     """
         In this series of visualizations, we are presenting the successful rate of projects in each state and we used another bar diagram to show the successful rate for different cost intervals. Thus, both classrooms teachers and donors will know where an ideal project cost should be at. Based on the graph, a cost between 0 to 100 has the highest successful rate, where the fully funded rate decreases as the costs increase. However, the trend stops when the cost is around 1000 dollars, where the successful rate maintains at 0.5 when the cost is above 1000 dollars.
-    """    
+    """
     )
     return
 
