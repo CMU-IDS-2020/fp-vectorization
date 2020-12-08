@@ -52,6 +52,150 @@ english_numbers = ["One", "Two", "Three", "Four", "Five",
                    "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety",
                    "Thousand", "Million", "Billion"]
 
+lr_weights_essay = {'X_essay_len': 0.0003453689601916409,
+ 'X_essay_?!': 0.021064285398078284,
+ 'X_essay_numbers': 0.016932228938762856}
+ # 'Project Valid Time': 0.0036698372667219735,
+ # 'Project Cost': -0.0008740402700159638,
+ # 'Teacher Project Posted Sequence': 0.0034669254479514256,
+ # 'Project Year 2016': -0.25166270855080325,
+ # 'Project Year 2017': -0.05981350582210004}
+
+lr_weights_category = { 'Literacy': -0.02707468032324999,
+  'Mathematics': -0.02687656482146483,
+  'Literature & Writing': -0.038273617655681796,
+  'Special Needs': -0.026392979534569778,
+  'Applied Sciences': 0.02549676901064158,
+  'Health & Wellness': 0.0032012685338489405,
+  'Visual Arts': 0.006071517684001481,
+  'Environmental Science': 0.01884535546982471,
+  'Early Development': -0.0006788974197114126,
+  'ESL': 0.0023238287072987127,
+  'Health & Life Science': 0.0018845667885582487,
+  'Music': 0.013348892470044968,
+  'History & Geography': -0.0007833087166925236,
+  'Character Education': 0.004330765985309406,
+  'College & Career Prep': -0.0028378513009307206,
+  'Other': -0.006017752496990515,
+  'Gym & Fitness': 0.005922847859095761,
+  'Performing Arts': 0.006202877206921002,
+  'Team Sports': 0.013268170269707941,
+  'Social Sciences': 0.00041355381631686034,
+  'Care & Hunger': 0.023784772780853423,
+  'Warmth': 0.023784772780853423,
+  'Extracurricular': 0.002847852972237367,
+  'Foreign Languages': -0.0017186680633591398,
+  'Civics & Government': 0.0005140673296167404,
+  'Parent Involvement': 0.0009905866100162147,
+  'Financial Literacy': 0.0065718344250536445,
+  'Nutrition Education': 0.0017995943835159597,
+  'Community Service': 0.0009094645635812981,
+  'Economics': 0.0012570439675198908}
+
+lr_weights_resource = { 'Supplies': -0.19139180814208856,
+ 'Technology': -0.1740392376320493,
+ 'Books': 0.07403893716480617,
+ 'Computers & Tablets': 0.06301674205250818,
+ 'Educational Kits & Games': 0.04563414984523414,
+ 'Instructional Technology': 0.037265324102779496,
+ 'Reading Nooks, Desks & Storage': 0.027151049040676063,
+ 'Flexible Seating': 0.023798335313490418,
+ 'Trips': 0.005797012257318246,
+ 'Classroom Basics': 0.023010833488723004,
+ 'Other': -0.009730279860252674,
+ 'Art Supplies': 0.015995695050181603,
+ 'Lab Equipment': 0.01568834613230089,
+ 'Sports & Exercise Equipment': 0.017190207245374275,
+ 'Food, Clothing & Hygiene': 0.012982815512523421,
+ 'Musical Instruments': 0.010240349272989488,
+ 'Visitors': 0.00030884354401461075}
+
+lr_weights_word = { 'student': 0.011999240835749853,
+ 'school': 0.02847537428042968,
+ 'learn': -0.03258168079200721,
+ 'classroom': -0.04419165658458639,
+ 'help': -0.016203675419747755,
+ 'work': -0.024830132949782317,
+ 'read': -0.08758572546595868,
+ 'love': 0.0038670017249353423,
+ 'day': 0.01864482146185271,
+ 'class': -0.010664263085390025,
+ 'skill': -0.004051605328362676,
+ 'book': 0.08891123239443433,
+ 'technology': -0.11808148897776176,
+ 'time': -0.03828046676455201,
+ 'one': -0.013698750028762858,
+ 'math': -0.03259576722352694,
+ 'material': -0.004415810549827926,
+ 'grade': -0.03598273405249703,
+ 'children': -0.034247693857368665,
+ 'different': -0.003268124289051787,
+ 'project': 0.025158522832961355,
+ 'teach': -0.033970627303085775,
+ 'like': -0.00347756367845725,
+ 'world': 0.03116739127851184,
+ 'create': 0.0016828536630393057,
+ 'best': 0.003262051110283812,
+ 'learners': 0.004210655545903511,
+ 'science': 0.031004027751371434,
+ 'education': -0.02150298612148186,
+ 'community': 0.038937585915636036,
+ 'language': 0.025340087778046357,
+ 'home': 0.012366785045436977,
+ 'activities': -0.03720693849990379,
+ 'free': 0.0036961382087381946,
+ 'access': -0.0036620869763228396,
+ 'opportunity': -0.003354965560059011,
+ 'life': 0.0020115152566479635,
+ 'first': 0.01722343165478454,
+ 'fun': -0.017475770193364368,
+ 'hard': 0.005316999701569931,
+ 'environment': -0.015014397830033352,
+ 'lunch': 0.013053854443090164,
+ 'resource': -0.014297770997661751,
+ 'experience': 0.02534696634867169,
+ 'opportunities': 0.014809217718014743,
+ 'excited': 0.016828821838213624,
+ 'diverse': 0.05852717296637586,
+ 'eager': -0.004577448377166036,
+ 'play': 0.05797370870760576,
+ 'art': -0.013101406079525585,
+ 'challenge': 0.03079511725692637,
+ 'creative': 0.003910213741442937,
+ 'goal': 0.009096277864894217,
+ 'music': 0.04180441724848595,
+ 'amazing': 0.01280515760706807,
+ 'social': 0.005537804932409498,
+ 'poverty': -0.009316069963444798,
+ 'games': 0.0045410344301653124,
+ 'hands-on': 0.007477850360871758,
+ 'research': -0.02901829895365344,
+ 'knowledge': -0.012215320220662433,
+ 'engaging': 0.01403594347559283,
+ 'safe': 0.013164625146149354,
+ 'computer': -0.022315610149847842,
+ 'literacy': 0.008574475625969856,
+ 'reduced': -0.01336023829928359,
+ 'however': -0.011229118773993931,
+ 'comfortable': -0.03274148709919751,
+ 'band': 0.01858247027019884,
+ 'instrument': 0.03176419463584191,
+ 'musical': 0.01069595718495234,
+ 'healthy': 0.007451734197098925,
+ 'breakfast': 0.016932998195825444,
+ 'hungry': 0.012336403239056796,
+ 'team': 0.05600358970159896,
+ 'sport': 0.0167304533199452,
+ 'hurricane': 0.06168902208641233,
+ 'health': -0.005649193766752872,
+ 'volleyball': 0.006319555881715688,
+ 'basketball': 0.01736761295049605,
+ 'soccer': 0.01102636374797383,
+ 'college': -0.001402934110751089,
+ 'museum': 0.003495619680884088,
+ 'paint': -0.0009725668333258118,
+ 'activity': -0.006963283625460165}
+
 lr_weights = {'X_essay_len': 0.0003453689601916409,
  'X_essay_?!': 0.021064285398078284,
  'X_essay_numbers': 0.016932228938762856,
@@ -193,7 +337,7 @@ lr_weights = {'X_essay_len': 0.0003453689601916409,
  'paint': -0.0009725668333258118,
  'activity': -0.006963283625460165}
 
-word_weights = {'student': 0.011999240835749853,
+general_word_weights = {'student': 0.011999240835749853,
   'school': 0.02847537428042968,
   'learn': -0.03258168079200721,
   'classroom': -0.04419165658458639,
@@ -421,22 +565,22 @@ def draw_title():
     )
     """
         ## Background
-        What happens when the school lacks funding? Based on the data 
+        What happens when the school lacks funding? Based on the data
         collected by the Virginia Department of Education, students have
-        fewer choices in courses, less experienced instructors, lower test 
-        scores and college enrollment in high poverty schools compared to 
-        low poverty ones. Even worse, according to the Center for American 
-        Progress, many school districts are impacted by the Covid-19 pandemic 
-        and will expect a higher budget loss in the coming years. Thus, financial 
-        support becomes increasingly important at this moment. Even though the 
-        funding itself could not be the panacea, an increasing amount of funding 
-        will offer students more educational opportunities, better supplies, as 
-        well as mental services. In order to relieve the stress and help more 
-        donors recognize the challenges public schools are currently facing, 
-        we use the datasets from DonorsChoose.org, a funding platform for public 
-        school teachers to find resources in need, to make visualizations. We 
-        would like to use our visualizations to present donors with useful 
-        information and attract more potential donors. 
+        fewer choices in courses, less experienced instructors, lower test
+        scores and college enrollment in high poverty schools compared to
+        low poverty ones. Even worse, according to the Center for American
+        Progress, many school districts are impacted by the Covid-19 pandemic
+        and will expect a higher budget loss in the coming years. Thus, financial
+        support becomes increasingly important at this moment. Even though the
+        funding itself could not be the panacea, an increasing amount of funding
+        will offer students more educational opportunities, better supplies, as
+        well as mental services. In order to relieve the stress and help more
+        donors recognize the challenges public schools are currently facing,
+        we use the datasets from DonorsChoose.org, a funding platform for public
+        school teachers to find resources in need, to make visualizations. We
+        would like to use our visualizations to present donors with useful
+        information and attract more potential donors.
     """
 
 def draw_narrative():
@@ -444,81 +588,83 @@ def draw_narrative():
     st.markdown(
     """
         # Visualization
-        In this section, we will demonstrate statistical analysis about 
+        In this section, we will demonstrate statistical analysis about
         the donation data in serveral dimensions via interactive visualizations.
-        
+
         ## Donation Cost Analysis
-        
+
         ### How did project cost distribute geographically?
-        
-    """    
+
+    """
     )
     draw_v1_modified()
-    
+
     st.markdown(
     """
         The map visualization shows the donation request from each state. The amount of donation increases as the color gets darker. One of the lighter places like Indiana has a proposed donation mean at around 602 dollars, while one of the darkest places like Wyoming has a proposed donation mean at around 874 dollars. Thus, we would like to see the reasons behind the differences among different states. Is it because some states have less state education fundings compared to the others so that they need extra fundings from the platform like DonorsChoose.org? The reality was the opposite. Based on the U.S.News (2020), the report from 2016-2017 school year showed that Vermont, New York, New Jersey, Pennsylvania and Wyoming were the top five states with the most state funding per pupil. Connecting the data to our visualization, it seems that the mean costs of donation requests from all the five states are above 760, except for Pennsylvania. Thereful, we could make the assumption that the states with darker colors may put more emphasis on education: even though they have plenty of fundings for the public schools, many teachers strive for getting better resources for their students.
-        
+
         If we click on specific states, we could also see the trends of donation requests through 2013-2018, which is also interesting to have further exploration. For instance, if we take a look at the state of Hawaii, we could see the change of its average donation request and its total donation request from 2013 to 2018. These three visualizations are giving donors an overview of how much money each state needs for their public classroom projects.
         ### How did project cost distribute with respect to various categories?
-    """  
+    """
     )
     # draw_v1()
     draw_v4()
     st.markdown(
     """
-        
-    """    
+
+    """
     )
     st.markdown(
     """
-        Understanding learners’ needs is an important aspect for donors, and we will discuss the needs based on grade level and resource category. For the grade level bar chart, we could see that the trend stays the same from the year 2013 to 2018, where grades Pre K-2 always maintain the highest project costs, then come grades 3-5, grades 6-8, and grades 9-12. Since this chart is showing the project request costs, no matter if the projects succeed or not, we could assume that lower grades need more fundings compared to higher grades, as they may need more supplies in the classroom. 
-        
+        Understanding learners’ needs is an important aspect for donors, and we will discuss the needs based on grade level and resource category. For the grade level bar chart, we could see that the trend stays the same from the year 2013 to 2018, where grades Pre K-2 always maintain the highest project costs, then come grades 3-5, grades 6-8, and grades 9-12. Since this chart is showing the project request costs, no matter if the projects succeed or not, we could assume that lower grades need more fundings compared to higher grades, as they may need more supplies in the classroom.
+
         We will take a further exploration of learners’ needs from the resource category chart. This is a similar chart showing the change of supplies throughout different years. In 2013, the order from most needed resources to least was technologies, supplies, books, others, trips, and visitors. The trend stayed in 2014 and 2015, but in 2015, the needs for other, trips, and supplies increased. In 2016, the need for supplies surged, and it even surpassed the need for technology. In 2017, more categories have been added, including instructional technology, lab experiments, computers and tablets, educational kits and games, flexible seating, clothing and hygiene, musical instruments, reading nooks, desks, storages, and sports and exercise equipment. 2017 is a transition year, where we could see how the emphasis of public schools changed. General supplies were split into several detailed categories, like flexible seating, hygiene, and reading nooks, and different types of educational technologies began to rise in public classrooms. The phenomenon could be explained by several reasons: increasing awareness of students’ physical and mental health, and the rapid development of technology. Physical health is always an important topic in schools, because students are more likely to receive high academic achievements with healthy bodies (Pennsylvania Department of Education). Similarly, as more mental crises are reported, mental health weighs the same importance as physical health, and schools start to pay extra attention to the stress, pressure and depression problems students are facing. Thus, multi-tiered systems of support are being used to intervene in students’ behaviors, and flexible seating is one of the options that could help students to create comfortable and safe environments in the classroom, and it counted as alternative seating for students who have special needs. For educational technology, as the National Education Association (NEA) supports, that “Every student needs the ability to navigate through the 24/7 information flow that today connects the global community.” Thus, many of the public schools implemented the “laptop programs,” where whole classes are provided with laptops so that teachers can experiment with online teaching and learning processes. At the same time, GoogleClassrooms and other educational platforms are introduced to support and motivate learning, and technology gradually becomes an indispensable part of the classroom. And if we scroll the graph to 2018, we could see that computers and tablets become the most needed category among all the resources.
+
         ### How much money did each state donate?
 
-    """    
+    """
     )
     draw_v3()
     st.markdown(
     """
-        These two graphs show the mean and the sum of donation records. Based on the graphs, we could see that the mean donation for most of the states is around 40 to 70 dollars, with some outliers of Hawaii, North Dakota, and Idaho, where the mean donation of Hawaii reaches 100 dollars per donation. As for the sum record graph, California, New York and Texas have the most donations added together, where we can make an assumption that the people at these places put a higher emphasis on education as they are willing to donate for school projects. However, this sum may be affected by the population so there is still bias available. 
-        
+        These two graphs show the mean and the sum of donation records. Based on the graphs, we could see that the mean donation for most of the states is around 40 to 70 dollars, with some outliers of Hawaii, North Dakota, and Idaho, where the mean donation of Hawaii reaches 100 dollars per donation. As for the sum record graph, California, New York and Texas have the most donations added together, where we can make an assumption that the people at these places put a higher emphasis on education as they are willing to donate for school projects. However, this sum may be affected by the population so there is still bias available.
+
         But based on these two graphs, potential donors can have brief ideas on how the donations went on in different states, and new donors can use the donation mean chart as their reference.
-        ## Successful Rate Analysis  
+        ## Successful Rate Analysis
+
         ### Successful Rate Variation over Years
-    """    
+    """
     )
     draw_v5()
     st.markdown(
     """
         ### Successful Rate under Grade levels and Resource Categories
-    """    
+    """
     )
     draw_v6()
     draw_v7()
     st.markdown(
     """
         ### Successful Rate under Different School Metro Types
-    """    
+    """
     )
     draw_v2()
     draw_v8()
     st.markdown(
     """
-        According to the Federal Register, Child Nutrition Programs: Income Eligibility Guidelines, 
-        schools are required to serve meals at no charge to children whose household income is at or below 130 percent of the Federal poverty guidelines. Children are entitled to pay a reduced price if their household income is above 130 percent but at or below 185 percent of these guidelines. In other words, when the household income of a family reaches the poverty level or is below the guideline, the kids in the family are eligible for reduced or free lunch. Thus, the less average household income tax received by the districts, the higher percentage of free lunch offered by the public schools. In this way, we could assume that schools with higher free lunch percentages will have a higher possibility of requiring funding projects. Based on that, our visualization gives an overview of the free lunch conditions in different school metro types within each state. In general, we could suggest that schools in urban areas have a higher percentage of school lunch, indicating higher needs for funding, compared to those in rural, suburban and town. But there are some exceptions, like Wyoming, Montana, and Idaho. In addition, even though there is the bias that this visualization does not cover all the schools in the United States, we could see some of the states have darker bubbles than other states, like District of Columbia, Louisiana, Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, showing their greater percentage for free lunch, which could be interpreted as a signal for funding. 
+        According to the Federal Register, Child Nutrition Programs: Income Eligibility Guidelines,
+        schools are required to serve meals at no charge to children whose household income is at or below 130 percent of the Federal poverty guidelines. Children are entitled to pay a reduced price if their household income is above 130 percent but at or below 185 percent of these guidelines. In other words, when the household income of a family reaches the poverty level or is below the guideline, the kids in the family are eligible for reduced or free lunch. Thus, the less average household income tax received by the districts, the higher percentage of free lunch offered by the public schools. In this way, we could assume that schools with higher free lunch percentages will have a higher possibility of requiring funding projects. Based on that, our visualization gives an overview of the free lunch conditions in different school metro types within each state. In general, we could suggest that schools in urban areas have a higher percentage of school lunch, indicating higher needs for funding, compared to those in rural, suburban and town. But there are some exceptions, like Wyoming, Montana, and Idaho. In addition, even though there is the bias that this visualization does not cover all the schools in the United States, we could see some of the states have darker bubbles than other states, like District of Columbia, Louisiana, Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, showing their greater percentage for free lunch, which could be interpreted as a signal for funding.
 
         From the second graph, we could see that urban school districts have higher success rates than other metro types. Connected with the conclusion we got above, we infer that the amount of fundings the type of schools need may affect their success rate. For example, urban schools who have a higher percentage of free lunch rate would start more projects, which may lead to a higher successful rate.
 
         ### Successful Rate Based on States
-    """    
+    """
     )
     draw_v9()
     st.markdown(
     """
         ### Successful Rate Based on Proposed Cost Intervals
-    """    
+    """
     )
     draw_v10()
     return
@@ -526,24 +672,22 @@ def draw_narrative():
 def draw_model():
     st.markdown(
     """
-    In the previous section, we explored what features of a project affect the fully funded rate. To help teachers formulate better project proposal, we build a machine learning model that predicts whether a project can get fully funded based on project proposal information.
-    
-    This model includes the following features:
-    * length of the project description
-    * number of '?' and '!' in the project description
-    * number of numerical expressions in the project description, such as 2, 4, tweenty, one hundered
-    * 85 high frequency words, such as student, learn, hungry, healthy
-    * project target cost
-    * project year
-    * project valid duration (expiration date - start date)
-    * project category
-    * category of resource required
+    # Model
 
-    This model uses Logistic Regression. We downsample the majority class to make the dataset balance, and then we split the dataset into training set (70%) and test set (30%), and calculated accuracy on the test set. The current model accuracy is 64.8%.
+    In the previous section, we explored what features of a project affect the fully funded rate. To help teachers formulate better project proposal, we build a machine learning model that predicts whether a project can get fully funded based on project proposal information.
 
     On this page, you can interact with our model.
     """
     )
+
+    st.markdown(
+    """
+        ## Model Statistics
+    """
+    )
+
+    model_display()
+
     # call other functions for model here
     st.markdown(
     """
@@ -565,7 +709,131 @@ def draw_model():
 
 ####################### model sections  #######################
 
+def model_display():
+    st.markdown(
+    """
+        This model uses Logistic Regression with the following features:
+        * length of the project description
+        * number of '?' and '!' in the project description
+        * number of numerical expressions in the project description, such as 2, 4, tweenty, one hundered
+        * 85 high frequency words, such as student, learn, hungry, healthy
+        * project target cost
+        * project year
+        * project valid duration (expiration date - start date)
+        * project categories
+        * resource categories
+
+        We downsample the majority class to make the dataset balance, and then we split the dataset into training set (70%) and test set (30%), and calculated accuracy on the test set. The current model accuracy is 64.8%.
+
+        We use all data from 2016 to 2018 to train our model. From our training result, we have discovered follwoing patterns:
+
+    """
+    )
+    essay_df = pd.DataFrame.from_dict(lr_weights_essay, orient="index")
+    essay_df['weight'] = essay_df. loc[:, 0]
+    essay_df['category'] = essay_df.index.values
+
+    category_df = pd.DataFrame.from_dict(lr_weights_category, orient="index")
+    category_df['weight'] = category_df. loc[:, 0]
+    category_df['category'] = category_df.index.values
+
+    resource_df = pd.DataFrame.from_dict(lr_weights_resource, orient="index")
+    resource_df['weight'] = resource_df. loc[:, 0]
+    resource_df['category'] = resource_df.index.values
+
+    word_df = pd.DataFrame.from_dict(lr_weights_word, orient="index")
+    word_df['weight'] = word_df. loc[:, 0]
+    word_df['category'] = word_df.index.values
+
+
+    st.markdown(
+    """
+    ### Features from project description
+
+    We have constructed several features based on the project description:
+
+    * length of the project description
+    * number of '?' and '!' in the project description
+    * number of numerical expressions in the project
+    * 85 high frequency words, such as student, learn, hungry, healthy
+
+    Below are their corresponding weights learned by our model.
+    """
+    )
+
+    chart = alt.Chart(essay_df).mark_bar().encode(
+        x='weight',
+        y=alt.Y('category',sort = '-x'),
+        tooltip=['weight', 'category'],
+        color=alt.condition(
+            alt.datum.weight < 0,
+            alt.value("steelblue"),  # The positive color
+            alt.value("orange")  # The negative color
+        )
+    ).properties(width=600)
+    st.write(chart)
+
+    chart = alt.Chart(word_df).mark_bar().encode(
+        y='weight',
+        x=alt.X('category',sort = '-y'),
+        tooltip=['weight', 'category'],
+        color=alt.condition(
+            alt.datum.weight < 0,
+            alt.value("steelblue"),  # The positive color
+            alt.value("orange")  # The negative color
+        )
+    ).properties(width=1000)
+    st.write(chart)
+
+    st.markdown(
+    """
+    ### Features from project categories
+
+    We have computed one-hot encoding for each project category, to discover what are some project categories that introduce better chance of getting fully-funded.
+    """
+    )
+
+    chart = alt.Chart(category_df).mark_bar().encode(
+        x='weight',
+        y=alt.Y('category',sort = '-x'),
+        tooltip=['weight', 'category'],
+        color=alt.condition(
+            alt.datum.weight < 0,
+            alt.value("steelblue"),  # The positive color
+            alt.value("orange")  # The negative color
+        )
+    ).properties(width=600)
+    st.write(chart)
+
+    st.markdown(
+    """
+    ### Features from resource categories
+
+    We have computed one-hot encoding for each resource category, to discover what are some resources that introduce better chance of getting fully-funded.
+    """
+    )
+
+    chart = alt.Chart(resource_df).mark_bar().encode(
+        x='weight',
+        y=alt.Y('category',sort = '-x'),
+        tooltip=['weight', 'category'],
+        color=alt.condition(
+            alt.datum.weight < 0,
+            alt.value("steelblue"),  # The positive color
+            alt.value("orange")  # The negative color
+        )
+    ).properties(width=600)
+    st.write(chart)
+
+
+    st.markdown(
+    """
+    """
+    )
+
 def model_proj_desc_interaction():
+    st.info("You can enter your own projct proposal, and get predicted by our model that whether your project can get fully funded! After you have entered all needed information, please click on the button \"Submit Project Proposal\" to run our model!")
+
     st.markdown(
     """
         ### Please enter your project proposal here!
@@ -583,7 +851,7 @@ def model_proj_desc_interaction():
     subcat = col1.multiselect("Project category", subcategories)
     rescat = col2.multiselect("Resource category", resources)
 
-    submitted = st.button("Submit project proposal")
+    submitted = st.button("Submit Project Proposal")
     if submitted:
         if cost == 0:
             st.markdown("> Please enter project cost!")
@@ -631,7 +899,7 @@ def calc_10_words(description):
     stem_to_weight, word_to_stem = compute_lr_words(L)
     stem_exists = { val: True for _, val in word_to_stem.items()}
     words = []
-    word_sorted_weights = pd.DataFrame.from_dict(word_weights, orient="index").sort_values(by=[0], ascending=False)
+    word_sorted_weights = pd.DataFrame.from_dict(general_word_weights, orient="index").sort_values(by=[0], ascending=False)
     word_sorted_weights = word_sorted_weights[word_sorted_weights[0] > 0]
     for index, row in word_sorted_weights.iterrows():
         # print(index, row[0])
@@ -889,11 +1157,11 @@ def draw_v1_modified():
     select_state = alt.selection_single(name="State",
                                         fields=['State'],
                                         init={'State': 'California'})
-    
+
     states = alt.topo_feature(data.us_10m.url, 'states')
-    
+
     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
-    
+
     avg_v = alt.Chart(
         states
     ).mark_geoshape(
@@ -917,7 +1185,7 @@ def draw_v1_modified():
         width=1000,
         height=700
     )
-    
+
     avg_time_v = alt.Chart(avg_time_df).mark_area(
         color="lightblue",
         line=True
@@ -933,7 +1201,7 @@ def draw_v1_modified():
         width=500,
         height=300
     )
-        
+
     sum_time_v = alt.Chart(avg_time_df).mark_area(
         color="lightyellow",
         line=True
@@ -948,11 +1216,11 @@ def draw_v1_modified():
     ).properties(
         width=500,
         height=301
-    ) 
-        
+    )
+
     st.write(avg_v & (avg_time_v | sum_time_v))
-    
-    
+
+
 
 def draw_v1():
     # slider for selecting specific years
@@ -975,7 +1243,7 @@ def draw_v1():
     sum_avg_filter_df = sum_avg_df[sum_avg_df['Post Year'] == year]
     #make a map
     states = alt.topo_feature(data.us_10m.url, 'states')
-    
+
     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
 
     count_v = alt.Chart(
@@ -1250,7 +1518,7 @@ def draw_v7():
     )
 
     st.write(before | after)
-    
+
 def draw_v8():
     rate = pd.read_csv('data/successful_rate_metro.csv')
     v6 = alt.Chart(rate).mark_bar().encode(
@@ -1268,7 +1536,7 @@ def draw_v8():
 
 def draw_v9():
     state_df = pd.read_csv("data/successful_rate_state.csv")
-    
+
     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
     states = alt.topo_feature(data.us_10m.url, 'states')
     v_9 = alt.Chart(
@@ -1293,9 +1561,9 @@ def draw_v9():
         width=1000,
         height=700
     )
-    
+
     st.write(v_9)
-    
+
 def draw_v10():
     categoryNames = ['[0,100)', '[100,200)', '[100,200)',
                      '[200,300)', '[200,300)', '[300,400)',
@@ -1328,7 +1596,7 @@ def draw_v10():
 
 sections = {
     'Description': draw_title,
-    'Narrative': draw_narrative,
+    'Visualization': draw_narrative,
     'Model': draw_model,
 }
 
