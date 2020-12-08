@@ -633,11 +633,13 @@ def draw_narrative():
         ## Successful Rate Analysis
 
         ### Successful Rate Variation over Years
+        In the successful rate section, we used a series of graphs revealing the current status of projects and the idea of what kind of projects may receive higher successful rates compared to the others.
     """
     )
     draw_v5()
     st.markdown(
     """
+        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools. 
         ### Successful Rate under Grade levels and Resource Categories
     """
     )
@@ -645,6 +647,10 @@ def draw_narrative():
     draw_v7()
     st.markdown(
     """
+        Based on the graph, the average successful rate for Pre K to grade 12 maintains at around 0.76. Thus, we can conclude that the grade level would not vitally affect the successful rate, and classroom teachers from each grade do not have to concern their grade level as an influential factor for a successful donation request.
+
+        However, we could see obvious differences among different resources categories. From both of the graphs, technology/computer & tablets have the least successful rate compared to other categories. Connected to the graph below, where higher proposed costs may lead to lower successful rate, we believe that technology equipment including computers and tablets may have higher costs and may need future investments on maintenance and repair.
+
         ### Successful Rate under Different School Metro Types
     """
     )
@@ -667,6 +673,11 @@ def draw_narrative():
     """
     )
     draw_v10()
+    st.markdown(
+    """
+        In this series of visualizations, we are presenting the successful rate of projects in each state and we used another bar diagram to show the successful rate for different cost intervals. Thus, both classrooms teachers and donors will know where an ideal project cost should be at. Based on the graph, a cost between 0 to 100 has the highest successful rate, where the fully funded rate decreases as the costs increase. However, the trend stops when the cost is around 1000 dollars, where the successful rate maintains at 0.5 when the cost is above 1000 dollars.
+    """    
+    )
     return
 
 def draw_model():
