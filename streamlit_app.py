@@ -1331,11 +1331,14 @@ def draw_v1_modified():
     avg_df = pd.read_csv("data/loc_cost_avg_join.csv")
     select_state = alt.selection_single(name="State",
                                         fields=['State'],
-                                        init={'State': 'California'})
+                                        init={'State': 'California'},
+                                        empty='none')
 
     states = alt.topo_feature(data.us_10m.url, 'states')
 
-    highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
+    highlight = alt.selection_single(fields=['State'], 
+                                     empty='none',
+                                     init={'State': 'California'})
 
     avg_v = alt.Chart(
         states,
