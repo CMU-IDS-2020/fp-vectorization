@@ -557,7 +557,7 @@ def draw_title():
 
         [Github repository](https://github.com/CMU-IDS-2020/fp-vectorization)
 
-        [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/DesignReview.pdf)
+        [Design Review](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/DesignReview.pdf)
 
         [Video](https://drive.google.com/file/d/1Mi2zYTQxJhcHAJW0ulg_B2-tZ2nV042W/view?usp=sharing)
 
