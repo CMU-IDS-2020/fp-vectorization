@@ -52,7 +52,9 @@ Second, based on our observation, a large number of projects are not fully-funde
 
 ## Links
 
-- [Paper](./documents/Report.pdf)
+<!-- - [Proposal](./documents/Proposal.pdf) -->
+- [Dataset](https://www.kaggle.com/donorschoose/io)
+- [Report](./documents/Report.pdf)
 - [Video](https://drive.google.com/file/d/1Mi2zYTQxJhcHAJW0ulg_B2-tZ2nV042W/view?usp=sharing)
 - [Application](https://share.streamlit.io/cmu-ids-2020/fp-vectorization/main)
 
