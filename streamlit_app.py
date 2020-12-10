@@ -565,9 +565,9 @@ def draw_title():
         collected by the Virginia Department of Education, students have
         fewer choices in courses, less experienced instructors, lower test
         scores and college enrollment in high poverty schools compared to
-        low poverty ones. Even worse, according to the Center for American
+        low poverty ones (Duncombe, 2017). Even worse, according to the Center for American
         Progress, many school districts are impacted by the Covid-19 pandemic
-        and will expect a higher budget loss in the coming years. Thus, financial
+        and will expect a higher budget loss in the coming years (2020). Thus, financial
         support becomes increasingly important at this moment. Even though the
         funding itself could not be the panacea, an increasing amount of funding
         will offer students more educational opportunities, better supplies, as
@@ -685,7 +685,7 @@ def draw_narrative():
         health, and the rapid development of technology. Physical health is 
         always an important topic in schools, because students are more likely 
         to receive high academic achievements with healthy bodies (Pennsylvania 
-        Department of Education). Similarly, as more mental crises are reported, 
+        Department of Education, 2020). Similarly, as more mental crises are reported, 
         mental health weighs the same importance as physical health, and schools 
         start to pay extra attention to the stress, pressure and depression 
         problems students are facing. Thus, multi-tiered systems of support are 
@@ -698,7 +698,7 @@ def draw_narrative():
         connects the global community.” Thus, many of the public schools 
         implemented the “laptop programs,” where whole classes are provided with 
         laptops so that teachers can experiment with online teaching and learning 
-        processes. At the same time, GoogleClassrooms and other educational 
+        processes (Chen, 2019). At the same time, GoogleClassrooms and other educational 
         platforms are introduced to support and motivate learning, and technology 
         gradually becomes an indispensable part of the classroom. And if we scroll 
         the graph to 2018, we could see that computers and tablets become the most 
@@ -747,7 +747,7 @@ def draw_narrative():
         charge to children whose household income is at or below 130 percent 
         of the Federal poverty guidelines. Children are entitled to pay a 
         reduced price if their household income is above 130 percent but at 
-        or below 185 percent of these guidelines. In other words, when the 
+        or below 185 percent of these guidelines (2020). In other words, when the 
         household income of a family reaches the poverty level or is below 
         the guideline, the kids in the family are eligible for reduced or free 
         lunch. Thus, the less average household income tax received by the 
