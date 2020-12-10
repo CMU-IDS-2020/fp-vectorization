@@ -844,6 +844,30 @@ def draw_model():
 
     return
 
+def draw_reference():
+    st.markdown(
+    """
+        # Reference
+        Chen, G. (2019). Technology in public schools. Public School Review. Retrieved from:
+            https://www.publicschoolreview.com/blog/technology-in-public-schools 
+
+        Child nutrition programs: Income eligibility guidelines (2020). Federal Register. Retrieved from: https://www.federalregister.gov/documents/2020/03/20/2020-05982/child-nutrition-programs-income-eligibility-guidelines 
+ 
+        Duncombe, C. (2017). Unequal opportunities: Fewer resources, worse outcomes for students in schools with concentrated poverty. The Commonwealth Institute. Retrieved from:
+            https://www.thecommonwealthinstitute.org/2017/10/26/unequal-opportunities-fewer-resources-worse-outcomes-for-students-in-schools-with-concentrated-poverty/
+
+        Health and physical education. (2020). PA Department of Education. Retrieved from: 
+            https://www.education.pa.gov/Teachers%20-%20Administrators/Curriculum/HealthPhysicalEd/Pages/default.aspx 
+
+
+        Leins, C. (2020). States with the most equitable school funding. U.S. News. Retrieved from:
+            https://www.usnews.com/news/best-states/articles/2020-01-21/states-with-the-most-equitable-school-funding#:~:text=The%2010%20Best%20U.S.%20States%20for%20Education&text=Vermont%20had%20the%20highest%20funding,the%20national%20average%20of%20%2414%2C046.&text=Arizona%2C%20Utah%2C%20Idaho%2C%20North,the%202016%2D2017%20school%20year. 
+
+        Partelow, L., Yin, J. & Sargrad, S. (2020). Why K-12 education needs more federal stimulus funding. Center for American Progress. Retrieved from:
+            https://www.americanprogress.org/issues/education-k-12/reports/2020/07/21/487865/k-12-education-needs-federal-stimulus-funding/ 
+    """    
+    )
+
 ####################### model sections  #######################
 
 def model_display():
@@ -1778,6 +1802,7 @@ sections = {
     'Description': draw_title,
     'Visualization': draw_narrative,
     'Model': draw_model,
+    'Reference': draw_reference
 }
 
 st.set_page_config(layout="wide")
