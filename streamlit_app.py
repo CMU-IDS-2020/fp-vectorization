@@ -590,10 +590,19 @@ def draw_narrative():
         # Visualization
         In this section, we will demonstrate statistical analysis about
         the donation data in serveral dimensions via interactive visualizations.
+        
+        Note that we might see some values drop dramatically at the year of 2018,
+        which is attributed to the incomplete data collected at that year. But we
+        still keep these data, as they are still valuable to be compared
+        horizontally with respect to other dimensions (e.g., states).
 
-        ## Donation Cost Analysis
+        ## 1. Donation Cost Analysis
 
-        ### How did project cost distribute geographically?
+        ### 1.1 How did project cost distribute geographically?
+        Usage: The color of the map indicates the average cost of projects in 
+        each state. The tooltip has extra information about the sum cost of 
+        projects. Further, by clicking on a specific state, its average and 
+        sum project costs are shown in the following line charts.
 
     """
     )
@@ -601,10 +610,36 @@ def draw_narrative():
 
     st.markdown(
     """
-        The map visualization shows the donation request from each state. The amount of donation increases as the color gets darker. One of the lighter places like Indiana has a proposed donation mean at around 602 dollars, while one of the darkest places like Wyoming has a proposed donation mean at around 874 dollars. Thus, we would like to see the reasons behind the differences among different states. Is it because some states have less state education fundings compared to the others so that they need extra fundings from the platform like DonorsChoose.org? The reality was the opposite. Based on the U.S.News (2020), the report from 2016-2017 school year showed that Vermont, New York, New Jersey, Pennsylvania and Wyoming were the top five states with the most state funding per pupil. Connecting the data to our visualization, it seems that the mean costs of donation requests from all the five states are above 760, except for Pennsylvania. Therefore, we could make the assumption that the states with darker colors may put more emphasis on education: even though they have plenty of fundings for the public schools, many teachers strive for getting better resources for their students.
-
-        If we click on specific states, we could also see the trends of donation requests through 2013-2018, which is also interesting to have further exploration. For instance, if we take a look at the state of Hawaii, we could see the change of its average donation request and its total donation request from 2013 to 2018. These three visualizations are giving donors an overview of how much money each state needs for their public classroom projects.
-        ### How did project cost distribute with respect to various categories?
+        The map visualization shows the donation request from each state. 
+        The amount of donation increases as the color gets darker. One of the 
+        lighter places like Indiana has a proposed donation mean at around 602 
+        dollars, while one of the darkest places like Wyoming has a proposed 
+        donation mean at around 874 dollars. Thus, we further investigate 
+        external reasons causing the phenomenon. An intuitive thought is 
+        that states that have less state education fundings tend to need more 
+        fundings from platforms like DonorsChoose.org. However, the reality 
+        was the opposite. Based on the U.S.News (2020), the report from 
+        2016-2017 school year showed that Vermont, New York, New Jersey, 
+        Pennsylvania and Wyoming were the top five states with the most 
+        state funding per pupil. Back to our visualization, the mean costs of 
+        donation requests from all the five states are above 760, except for 
+        Pennsylvania. Since the states with relatively darker colors match with 
+        the states who have high educational fundings, it is possible that the 
+        states with higher average donation requests may put more emphasis on 
+        education: even though they have plenty of state fundings for the public 
+        schools, teachers and schools are still striving for getting better 
+        resources for their students. 
+        
+        Futhermore, if we click on specific states, we could also see the trends of 
+        donation requests through 2013-2018, which is also interesting to have 
+        further exploration. For instance, if we take a look at the state of 
+        Hawaii, we could see the change of its average donation request and 
+        its total donation request from 2013 to 2018. These three visualizations 
+        are giving donors an overview of how much money each state needs for 
+        their public classroom projects.
+        
+        ## 1.2 How did requested cost distribute with respect to different categories?
+        Usage: By clicking on a bar in the left char, its value change over the years will be demonstrated on the right chart.
     """
     )
     # draw_v1()
@@ -616,11 +651,55 @@ def draw_narrative():
     )
     st.markdown(
     """
-        Understanding learners’ needs is an important aspect for donors, and we will discuss the needs based on grade level and resource category. For the grade level bar chart, we could see that the trend stays the same from the year 2013 to 2018, where grades Pre K-2 always maintain the highest project costs, then come grades 3-5, grades 6-8, and grades 9-12. Since this chart is showing the project request costs, no matter if the projects succeed or not, we could assume that lower grades need more fundings compared to higher grades, as they may need more supplies in the classroom.
+        Understanding learners’ needs is an important aspect for donors, and 
+        we will discuss the needs based on grade level and resource category. 
+        For the grade level bar chart, we could see that the trend stays the 
+        same from the year 2013 to 2018, where grades Pre K-2 always maintain 
+        the highest project costs, then come grades 3-5, grades 6-8, and grades 
+        9-12. Since this chart is showing the project request costs, no matter 
+        if the projects succeed or not, we could assume that lower grades need 
+        more fundings compared to higher grades, as they may need more supplies 
+        in the classroom.
 
-        We will take a further exploration of learners’ needs from the resource category chart. This is a similar chart showing the change of supplies throughout different years. In 2013, the order from most needed resources to least was technologies, supplies, books, others, trips, and visitors. The trend stayed in 2014 and 2015, but in 2015, the needs for other, trips, and supplies increased. In 2016, the need for supplies surged, and it even surpassed the need for technology. In 2017, more categories have been added, including instructional technology, lab experiments, computers and tablets, educational kits and games, flexible seating, clothing and hygiene, musical instruments, reading nooks, desks, storages, and sports and exercise equipment. 2017 is a transition year, where we could see how the emphasis of public schools changed. General supplies were split into several detailed categories, like flexible seating, hygiene, and reading nooks, and different types of educational technologies began to rise in public classrooms. The phenomenon could be explained by several reasons: increasing awareness of students’ physical and mental health, and the rapid development of technology. Physical health is always an important topic in schools, because students are more likely to receive high academic achievements with healthy bodies (Pennsylvania Department of Education). Similarly, as more mental crises are reported, mental health weighs the same importance as physical health, and schools start to pay extra attention to the stress, pressure and depression problems students are facing. Thus, multi-tiered systems of support are being used to intervene in students’ behaviors, and flexible seating is one of the options that could help students to create comfortable and safe environments in the classroom, and it counted as alternative seating for students who have special needs. For educational technology, as the National Education Association (NEA) supports, that “Every student needs the ability to navigate through the 24/7 information flow that today connects the global community.” Thus, many of the public schools implemented the “laptop programs,” where whole classes are provided with laptops so that teachers can experiment with online teaching and learning processes. At the same time, GoogleClassrooms and other educational platforms are introduced to support and motivate learning, and technology gradually becomes an indispensable part of the classroom. And if we scroll the graph to 2018, we could see that computers and tablets become the most needed category among all the resources.
+        We will take a further exploration of learners’ needs from the resource 
+        category chart. This is a similar chart showing the change of supplies 
+        throughout different years. In 2013, the order from most needed resources 
+        to least was technologies, supplies, books, others, trips, and visitors. T
+        he trend stayed in 2014 and 2015, but in 2015, the needs for other, trips, 
+        and supplies increased. In 2016, the need for supplies surged, and it 
+        even surpassed the need for technology. In 2017, more categories have 
+        been added, including instructional technology, lab experiments, computers 
+        and tablets, educational kits and games, flexible seating, clothing and 
+        hygiene, musical instruments, reading nooks, desks, storages, and sports 
+        and exercise equipment. 2017 is a transition year, where we could see 
+        how the emphasis of public schools changed. General supplies were split 
+        into several detailed categories, like flexible seating, hygiene, and 
+        reading nooks, and different types of educational technologies began 
+        to rise in public classrooms. The phenomenon could be explained by 
+        several reasons: increasing awareness of students’ physical and mental 
+        health, and the rapid development of technology. Physical health is 
+        always an important topic in schools, because students are more likely 
+        to receive high academic achievements with healthy bodies (Pennsylvania 
+        Department of Education). Similarly, as more mental crises are reported, 
+        mental health weighs the same importance as physical health, and schools 
+        start to pay extra attention to the stress, pressure and depression 
+        problems students are facing. Thus, multi-tiered systems of support are 
+        being used to intervene in students’ behaviors, and flexible seating is 
+        one of the options that could help students to create comfortable and 
+        safe environments in the classroom, and it counted as alternative seating 
+        for students who have special needs. For educational technology, as the 
+        National Education Association (NEA) supports, that “Every student needs 
+        the ability to navigate through the 24/7 information flow that today 
+        connects the global community.” Thus, many of the public schools 
+        implemented the “laptop programs,” where whole classes are provided with 
+        laptops so that teachers can experiment with online teaching and learning 
+        processes. At the same time, GoogleClassrooms and other educational 
+        platforms are introduced to support and motivate learning, and technology 
+        gradually becomes an indispensable part of the classroom. And if we scroll 
+        the graph to 2018, we could see that computers and tablets become the most 
+        needed category among all the resources.
 
-        ### How much money did each state donate?
+        ### 1.3 How much money did each state donate?
 
     """
     )
@@ -630,9 +709,9 @@ def draw_narrative():
         These two graphs show the mean and the sum of donation records. Based on the graphs, we could see that the mean donation for most of the states is around 40 to 70 dollars, with some outliers of Hawaii, North Dakota, and Idaho, where the mean donation of Hawaii reaches 100 dollars per donation. As for the sum record graph, California, New York and Texas have the most donations added together, where we can make an assumption that the people at these places put a higher emphasis on education as they are willing to donate for school projects. However, this sum may be affected by the population so there is still bias available.
 
         But based on these two graphs, potential donors can have brief ideas on how the donations went on in different states, and new donors can use the donation mean chart as their reference.
-        ## Successful Rate Analysis
+        ## 2. Successful Rate Analysis
 
-        ### Successful Rate Variation over Years
+        ### 2.1 Successful Rate Variation over Years
         In the successful rate section, we used a series of graphs revealing the current status of projects and the idea of what kind of projects may receive higher successful rates compared to the others.
     """
     )
@@ -640,7 +719,7 @@ def draw_narrative():
     st.markdown(
     """
         In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools. 
-        ### Successful Rate under Grade levels and Resource Categories
+        ### 2.2 Successful Rate under Grade levels and Resource Categories
     """
     )
     draw_v6()
@@ -651,31 +730,73 @@ def draw_narrative():
 
         However, we could see obvious differences among different resources categories. From both of the graphs, technology/computer & tablets have the least successful rate compared to other categories. Connected to the graph below, where higher proposed costs may lead to lower successful rate, we believe that technology equipment including computers and tablets may have higher costs and may need future investments on maintenance and repair.
 
-        ### Successful Rate under Different School Metro Types
+        ### 2.3 Successful Rate under Different School Metro Types and investigation about free lunch rates
     """
     )
     draw_v2()
     draw_v8()
     st.markdown(
     """
-        According to the Federal Register, Child Nutrition Programs: Income Eligibility Guidelines,
-        schools are required to serve meals at no charge to children whose household income is at or below 130 percent of the Federal poverty guidelines. Children are entitled to pay a reduced price if their household income is above 130 percent but at or below 185 percent of these guidelines. In other words, when the household income of a family reaches the poverty level or is below the guideline, the kids in the family are eligible for reduced or free lunch. Thus, the less average household income tax received by the districts, the higher percentage of free lunch offered by the public schools. In this way, we could assume that schools with higher free lunch percentages will have a higher possibility of requiring funding projects. Based on that, our visualization gives an overview of the free lunch conditions in different school metro types within each state. In general, we could suggest that schools in urban areas have a higher percentage of school lunch, indicating higher needs for funding, compared to those in rural, suburban and town. But there are some exceptions, like Wyoming, Montana, and Idaho. In addition, even though there is the bias that this visualization does not cover all the schools in the United States, we could see some of the states have darker bubbles than other states, like District of Columbia, Louisiana, Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, showing their greater percentage for free lunch, which could be interpreted as a signal for funding.
+        According to the Federal Register, Child Nutrition Programs: Income 
+        Eligibility Guidelines, schools are required to serve meals at no 
+        charge to children whose household income is at or below 130 percent 
+        of the Federal poverty guidelines. Children are entitled to pay a 
+        reduced price if their household income is above 130 percent but at 
+        or below 185 percent of these guidelines. In other words, when the 
+        household income of a family reaches the poverty level or is below 
+        the guideline, the kids in the family are eligible for reduced or free 
+        lunch. Thus, the less average household income tax received by the 
+        districts, the higher percentage of free lunch offered by the public 
+        schools. In this way, we could assume that schools with higher free 
+        lunch percentages will have a higher possibility of requiring funding 
+        projects. Based on that, our visualization gives an overview of the 
+        free lunch conditions in different school metro types within each 
+        state. In general, we could suggest that schools in urban areas have a 
+        higher percentage of school lunch, indicating higher needs for funding, 
+        compared to those in rural, suburban and town. But there are some 
+        exceptions, like Wyoming, Montana, and Idaho. In addition, even though 
+        there is the bias that this visualization does not cover all the 
+        schools in the United States, we could see some of the states have 
+        darker bubbles than other states, like District of Columbia, Louisiana, 
+        Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, 
+        showing their greater percentage for free lunch, which could be 
+        interpreted as a signal for funding. 
 
-        From the second graph, we could see that urban school districts have higher success rates than other metro types. Connected with the conclusion we got above, we infer that the amount of fundings the type of schools need may affect their success rate. For example, urban schools who have a higher percentage of free lunch rate would start more projects, which may lead to a higher successful rate.
-
-        ### Successful Rate Based on States
+        From the second graph, we could see that urban school districts 
+        have higher success rates than other metro types. With the conclusion 
+        we got above, we infer that the amount of fundings the type of schools 
+        need may affect their success rate. For example, urban schools who have 
+        a higher percentage of free lunch rate may start more projects compared 
+        to other school types, which may indirectly affect their success rate 
+        (e.g., winning more favors of donors). 
+        
+        ### 2.4 Successful Rate Based on States
     """
     )
     draw_v9()
     st.markdown(
     """
-        ### Successful Rate Based on Proposed Cost Intervals
+        In this visualization, we are presenting the successful rate of 
+        projects in each state. An interesting insight here is that there 
+        are state clustering patterns reflected by the map: the southern part 
+        of the U.S., especially the states in the southeast of the U.S. have 
+        low successful rates in general, while the northern part has relatively 
+        high rates. 
+        ### 2.5 Successful Rate Based on Proposed Cost Intervals
     """
     )
     draw_v10()
     st.markdown(
     """
-        In this series of visualizations, we are presenting the successful rate of projects in each state and we used another bar diagram to show the successful rate for different cost intervals. Thus, both classrooms teachers and donors will know where an ideal project cost should be at. Based on the graph, a cost between 0 to 100 has the highest successful rate, where the fully funded rate decreases as the costs increase. However, the trend stops when the cost is around 1000 dollars, where the successful rate maintains at 0.5 when the cost is above 1000 dollars.
+        We used another bar diagram to show the successful rate for different 
+        cost intervals. Thus, both classrooms teachers and donors will know 
+        where an ideal project cost should be at. Based on the graph, we could 
+        see that the fully funded rates decrease as the costs increase when 
+        the project cost is under 1000 dollars. However, the trend stops when 
+        the cost is around 1000 dollars, where the successful rate maintains 
+        at 0.5 when the cost is above 1000 dollars. This insight is a little 
+        counterintuitive, because we thought the rate should always be linearly 
+        decreasing with respect to the increase of the project cost. 
     """    
     )
     return
@@ -1337,7 +1458,7 @@ def draw_v2():
 
 def draw_v3():
     df = pd.read_csv("data/state_donate_avg_sum.csv")
-    slider = alt.binding_range(min=2013, max=2018, step=1)
+    slider = alt.binding_range(min=2013, max=2018, step=1, name='Year')
     select_year = alt.selection_single(name="Year", fields=['Year'],
                                        bind=slider, init={'Year': 2013})
 
@@ -1374,7 +1495,7 @@ def draw_v4():
     grade_selector = alt.selection_single(fields=['Project Grade Level Category'])
     resource_selector = alt.selection_single(fields=['Project Resource Category'])
 
-    slider = alt.binding_range(min=2013, max=2018, step=1)
+    slider = alt.binding_range(min=2013, max=2018, step=1, name='Year')
     select_year = alt.selection_single(name="Year", fields=['Post year'],
                                        bind=slider, init={'Post year': 2017})
     g_histo = alt.Chart(grade).mark_bar().encode(
