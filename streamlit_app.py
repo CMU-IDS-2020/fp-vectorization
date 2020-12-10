@@ -13,6 +13,8 @@ from htbuilder.units import px, rem, em
 
 ####################### global variables #######################
 
+graph_width = 600
+
 subcategories = ['Literacy', 'Mathematics', 'Literature & Writing', 'Special Needs',
    'Applied Sciences', 'Health & Wellness', 'Visual Arts',
    'Environmental Science', 'Early Development', 'ESL',
@@ -559,7 +561,7 @@ def draw_title():
     """
     )
     """
-        ## Background
+        ## Introduction
 
         What happens when the school lacks funding? Based on the data
         collected by the Virginia Department of Education, students have
@@ -595,7 +597,7 @@ def draw_narrative():
         # Visualization
         In this section, we will demonstrate statistical analysis about
         the donation data in serveral dimensions via interactive visualizations.
-        
+
         Note that we might see some values drop dramatically at the year of 2018,
         which is attributed to the incomplete data collected at that year. But we
         still keep these data, as they are still valuable to be compared
@@ -604,9 +606,9 @@ def draw_narrative():
         ## 1. Donation Cost Analysis
 
         ### 1.1 How did project cost distribute geographically?
-        Usage: The color of the map indicates the average cost of projects in 
-        each state. The tooltip has extra information about the sum cost of 
-        projects. Further, by clicking on a specific state, its average and 
+        Usage: The color of the map indicates the average cost of projects in
+        each state. The tooltip has extra information about the sum cost of
+        projects. Further, by clicking on a specific state, its average and
         sum project costs are shown in the following line charts.
 
     """
@@ -615,34 +617,34 @@ def draw_narrative():
 
     st.markdown(
     """
-        The map visualization shows the donation request from each state. 
-        The amount of donation increases as the color gets darker. One of the 
-        lighter places like Indiana has a proposed donation mean at around 602 
-        dollars, while one of the darkest places like Wyoming has a proposed 
-        donation mean at around 874 dollars. Thus, we further investigate 
-        external reasons causing the phenomenon. An intuitive thought is 
-        that states that have less state education fundings tend to need more 
-        fundings from platforms like DonorsChoose.org. However, the reality 
-        was the opposite. Based on the U.S.News (2020), the report from 
-        2016-2017 school year showed that Vermont, New York, New Jersey, 
-        Pennsylvania and Wyoming were the top five states with the most 
-        state funding per pupil. Back to our visualization, the mean costs of 
-        donation requests from all the five states are above 760, except for 
-        Pennsylvania. Since the states with relatively darker colors match with 
-        the states who have high educational fundings, it is possible that the 
-        states with higher average donation requests may put more emphasis on 
-        education: even though they have plenty of state fundings for the public 
-        schools, teachers and schools are still striving for getting better 
-        resources for their students. 
-        
-        Futhermore, if we click on specific states, we could also see the trends of 
-        donation requests through 2013-2018, which is also interesting to have 
-        further exploration. For instance, if we take a look at the state of 
-        Hawaii, we could see the change of its average donation request and 
-        its total donation request from 2013 to 2018. These three visualizations 
-        are giving donors an overview of how much money each state needs for 
+        The map visualization shows the donation request from each state.
+        The amount of donation increases as the color gets darker. One of the
+        lighter places like Indiana has a proposed donation mean at around 602
+        dollars, while one of the darkest places like Wyoming has a proposed
+        donation mean at around 874 dollars. Thus, we further investigate
+        external reasons causing the phenomenon. An intuitive thought is
+        that states that have less state education fundings tend to need more
+        fundings from platforms like DonorsChoose.org. However, the reality
+        was the opposite. Based on the U.S.News (2020), the report from
+        2016-2017 school year showed that Vermont, New York, New Jersey,
+        Pennsylvania and Wyoming were the top five states with the most
+        state funding per pupil. Back to our visualization, the mean costs of
+        donation requests from all the five states are above 760, except for
+        Pennsylvania. Since the states with relatively darker colors match with
+        the states who have high educational fundings, it is possible that the
+        states with higher average donation requests may put more emphasis on
+        education: even though they have plenty of state fundings for the public
+        schools, teachers and schools are still striving for getting better
+        resources for their students.
+
+        Futhermore, if we click on specific states, we could also see the trends of
+        donation requests through 2013-2018, which is also interesting to have
+        further exploration. For instance, if we take a look at the state of
+        Hawaii, we could see the change of its average donation request and
+        its total donation request from 2013 to 2018. These three visualizations
+        are giving donors an overview of how much money each state needs for
         their public classroom projects.
-        
+
         ## 1.2 How did requested cost distribute with respect to different categories?
         Usage: By clicking on a bar in the left char, its value change over the years will be demonstrated on the right chart.
     """
@@ -656,52 +658,59 @@ def draw_narrative():
     )
     st.markdown(
     """
-        Understanding learners’ needs is an important aspect for donors, and 
-        we will discuss the needs based on grade level and resource category. 
-        For the grade level bar chart, we could see that the trend stays the 
-        same from the year 2013 to 2018, where grades Pre K-2 always maintain 
-        the highest project costs, then come grades 3-5, grades 6-8, and grades 
-        9-12. Since this chart is showing the project request costs, no matter 
-        if the projects succeed or not, we could assume that lower grades need 
-        more fundings compared to higher grades, as they may need more supplies 
+        Understanding learners’ needs is an important aspect for donors, and
+        we will discuss the needs based on grade level and resource category.
+        For the grade level bar chart, we could see that the trend stays the
+        same from the year 2013 to 2018, where grades Pre K-2 always maintain
+        the highest project costs, then come grades 3-5, grades 6-8, and grades
+        9-12. Since this chart is showing the project request costs, no matter
+        if the projects succeed or not, we could assume that lower grades need
+        more fundings compared to higher grades, as they may need more supplies
         in the classroom.
 
-        We will take a further exploration of learners’ needs from the resource 
-        category chart. This is a similar chart showing the change of supplies 
-        throughout different years. In 2013, the order from most needed resources 
-        to least was technologies, supplies, books, others, trips, and visitors. T
-        he trend stayed in 2014 and 2015, but in 2015, the needs for other, trips, 
-        and supplies increased. In 2016, the need for supplies surged, and it 
-        even surpassed the need for technology. In 2017, more categories have 
-        been added, including instructional technology, lab experiments, computers 
-        and tablets, educational kits and games, flexible seating, clothing and 
-        hygiene, musical instruments, reading nooks, desks, storages, and sports 
-        and exercise equipment. 2017 is a transition year, where we could see 
-        how the emphasis of public schools changed. General supplies were split 
-        into several detailed categories, like flexible seating, hygiene, and 
-        reading nooks, and different types of educational technologies began 
-        to rise in public classrooms. The phenomenon could be explained by 
-        several reasons: increasing awareness of students’ physical and mental 
-        health, and the rapid development of technology. Physical health is 
-        always an important topic in schools, because students are more likely 
-        to receive high academic achievements with healthy bodies (Pennsylvania 
-        Department of Education, 2020). Similarly, as more mental crises are reported, 
-        mental health weighs the same importance as physical health, and schools 
-        start to pay extra attention to the stress, pressure and depression 
-        problems students are facing. Thus, multi-tiered systems of support are 
-        being used to intervene in students’ behaviors, and flexible seating is 
-        one of the options that could help students to create comfortable and 
-        safe environments in the classroom, and it counted as alternative seating 
-        for students who have special needs. For educational technology, as the 
-        National Education Association (NEA) supports, that “Every student needs 
-        the ability to navigate through the 24/7 information flow that today 
-        connects the global community.” Thus, many of the public schools 
-        implemented the “laptop programs,” where whole classes are provided with 
-        laptops so that teachers can experiment with online teaching and learning 
-        processes (Chen, 2019). At the same time, GoogleClassrooms and other educational 
-        platforms are introduced to support and motivate learning, and technology 
-        gradually becomes an indispensable part of the classroom. And if we scroll 
-        the graph to 2018, we could see that computers and tablets become the most 
+        We will take a further exploration of learners’ needs from the resource
+        category chart. This is a similar chart showing the change of supplies
+        throughout different years.
+
+        In 2013, the order from most needed resources
+        to least was technologies, supplies, books, others, trips, and visitors.
+
+        The trend stayed in 2014 and 2015, but in 2015, the needs for other, trips,
+        and supplies increased. In 2016, the need for supplies surged, and it
+        even surpassed the need for technology.
+
+        In 2017, more categories have
+        been added, including instructional technology, lab experiments, computers
+        and tablets, educational kits and games, flexible seating, clothing and
+        hygiene, musical instruments, reading nooks, desks, storages, and sports
+        and exercise equipment. 2017 is a transition year, where we could see
+        how the emphasis of public schools changed. General supplies were split
+        into several detailed categories, like flexible seating, hygiene, and
+        reading nooks, and different types of educational technologies began
+        to rise in public classrooms. The phenomenon could be explained by
+        several reasons: increasing awareness of students’ physical and mental
+        health, and the rapid development of technology. Physical health is
+        always an important topic in schools, because students are more likely
+        to receive high academic achievements with healthy bodies (Pennsylvania
+        Department of Education, 2020). Similarly, as more mental crises are reported,
+        mental health weighs the same importance as physical health, and schools
+        start to pay extra attention to the stress, pressure and depression
+        problems students are facing. Thus, multi-tiered systems of support are
+        being used to intervene in students’ behaviors, and flexible seating is
+        one of the options that could help students to create comfortable and
+        safe environments in the classroom, and it counted as alternative seating
+        for students who have special needs. For educational technology, as the
+        National Education Association (NEA) supports, that “Every student needs
+        the ability to navigate through the 24/7 information flow that today
+        connects the global community.” Thus, many of the public schools
+        implemented the “laptop programs,” where whole classes are provided with
+        laptops so that teachers can experiment with online teaching and learning
+        processes (Chen, 2019). At the same time, GoogleClassrooms and other educational
+        platforms are introduced to support and motivate learning, and technology
+        gradually becomes an indispensable part of the classroom.
+
+        And if we scroll
+        the graph to 2018, we could see that computers and tablets become the most
         needed category among all the resources.
 
         ### 1.3 How much money did each state donate?
@@ -723,7 +732,7 @@ def draw_narrative():
     draw_v5()
     st.markdown(
     """
-        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools. 
+        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools.
         ### 2.2 Successful Rate under Grade levels and Resource Categories
     """
     )
@@ -742,67 +751,67 @@ def draw_narrative():
     draw_v8()
     st.markdown(
     """
-        According to the Federal Register, Child Nutrition Programs: Income 
-        Eligibility Guidelines, schools are required to serve meals at no 
-        charge to children whose household income is at or below 130 percent 
-        of the Federal poverty guidelines. Children are entitled to pay a 
-        reduced price if their household income is above 130 percent but at 
-        or below 185 percent of these guidelines (2020). In other words, when the 
-        household income of a family reaches the poverty level or is below 
-        the guideline, the kids in the family are eligible for reduced or free 
-        lunch. Thus, the less average household income tax received by the 
-        districts, the higher percentage of free lunch offered by the public 
-        schools. In this way, we could assume that schools with higher free 
-        lunch percentages will have a higher possibility of requiring funding 
-        projects. Based on that, our visualization gives an overview of the 
-        free lunch conditions in different school metro types within each 
-        state. In general, we could suggest that schools in urban areas have a 
-        higher percentage of school lunch, indicating higher needs for funding, 
-        compared to those in rural, suburban and town. But there are some 
-        exceptions, like Wyoming, Montana, and Idaho. In addition, even though 
-        there is the bias that this visualization does not cover all the 
-        schools in the United States, we could see some of the states have 
-        darker bubbles than other states, like District of Columbia, Louisiana, 
-        Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee, 
-        showing their greater percentage for free lunch, which could be 
-        interpreted as a signal for funding. 
+        According to the Federal Register, Child Nutrition Programs: Income
+        Eligibility Guidelines, schools are required to serve meals at no
+        charge to children whose household income is at or below 130 percent
+        of the Federal poverty guidelines. Children are entitled to pay a
+        reduced price if their household income is above 130 percent but at
+        or below 185 percent of these guidelines (2020). In other words, when the
+        household income of a family reaches the poverty level or is below
+        the guideline, the kids in the family are eligible for reduced or free
+        lunch. Thus, the less average household income tax received by the
+        districts, the higher percentage of free lunch offered by the public
+        schools. In this way, we could assume that schools with higher free
+        lunch percentages will have a higher possibility of requiring funding
+        projects. Based on that, our visualization gives an overview of the
+        free lunch conditions in different school metro types within each
+        state. In general, we could suggest that schools in urban areas have a
+        higher percentage of school lunch, indicating higher needs for funding,
+        compared to those in rural, suburban and town. But there are some
+        exceptions, like Wyoming, Montana, and Idaho. In addition, even though
+        there is the bias that this visualization does not cover all the
+        schools in the United States, we could see some of the states have
+        darker bubbles than other states, like District of Columbia, Louisiana,
+        Mississippi, Illinois, New Jersey, Oklahoma, Pennsylvania, and Tennessee,
+        showing their greater percentage for free lunch, which could be
+        interpreted as a signal for funding.
 
-        From the second graph, we could see that urban school districts 
-        have higher success rates than other metro types. With the conclusion 
-        we got above, we infer that the amount of fundings the type of schools 
-        need may affect their success rate. For example, urban schools who have 
-        a higher percentage of free lunch rate may start more projects compared 
-        to other school types, which may indirectly affect their success rate 
-        (e.g., winning more favors of donors). 
-        
+        From the second graph, we could see that urban school districts
+        have higher success rates than other metro types. With the conclusion
+        we got above, we infer that the amount of fundings the type of schools
+        need may affect their success rate. For example, urban schools who have
+        a higher percentage of free lunch rate may start more projects compared
+        to other school types, which may indirectly affect their success rate
+        (e.g., winning more favors of donors).
+
         ### 2.4 Successful Rate Based on States
     """
     )
     draw_v9()
     st.markdown(
     """
-        In this visualization, we are presenting the successful rate of 
-        projects in each state. An interesting insight here is that there 
-        are state clustering patterns reflected by the map: the southern part 
-        of the U.S., especially the states in the southeast of the U.S. have 
-        low successful rates in general, while the northern part has relatively 
-        high rates. 
+        In this visualization, we are presenting the successful rate of
+        projects in each state. An interesting insight here is that there
+        are state clustering patterns reflected by the map: the southern part
+        of the U.S., especially the states in the southeast of the U.S. have
+        low successful rates in general, while the northern part has relatively
+        high rates.
         ### 2.5 Successful Rate Based on Proposed Cost Intervals
     """
     )
     draw_v10()
     st.markdown(
     """
-        We used another bar diagram to show the successful rate for different 
-        cost intervals. Thus, both classrooms teachers and donors will know 
-        where an ideal project cost should be at. Based on the graph, we could 
-        see that the fully funded rates decrease as the costs increase when 
-        the project cost is under 1000 dollars. However, the trend stops when 
-        the cost is around 1000 dollars, where the successful rate maintains 
-        at 0.5 when the cost is above 1000 dollars. This insight is a little 
-        counterintuitive, because we thought the rate should always be linearly 
-        decreasing with respect to the increase of the project cost. 
-    """    
+        We used another bar diagram to show the successful rate for different
+        cost intervals. Thus, both classrooms teachers and donors will know
+        where an ideal project cost should be at. Based on the graph, we could
+        see that the fully funded rates decrease as the costs increase when
+        the project cost is under 1000 dollars. However, the trend stops when
+        the cost is around 1000 dollars, where the successful rate maintains
+        at 0.5 when the cost is above 1000 dollars. This insight is a little
+        counterintuitive, because we thought the rate should always be linearly
+        decreasing with respect to the increase of the project cost.
+    """
     )
     return
 
@@ -849,23 +858,23 @@ def draw_reference():
     """
         # Reference
         Chen, G. (2019). Technology in public schools. Public School Review. Retrieved from:
-            https://www.publicschoolreview.com/blog/technology-in-public-schools 
+            https://www.publicschoolreview.com/blog/technology-in-public-schools
 
-        Child nutrition programs: Income eligibility guidelines (2020). Federal Register. Retrieved from: https://www.federalregister.gov/documents/2020/03/20/2020-05982/child-nutrition-programs-income-eligibility-guidelines 
- 
+        Child nutrition programs: Income eligibility guidelines (2020). Federal Register. Retrieved from: https://www.federalregister.gov/documents/2020/03/20/2020-05982/child-nutrition-programs-income-eligibility-guidelines
+
         Duncombe, C. (2017). Unequal opportunities: Fewer resources, worse outcomes for students in schools with concentrated poverty. The Commonwealth Institute. Retrieved from:
             https://www.thecommonwealthinstitute.org/2017/10/26/unequal-opportunities-fewer-resources-worse-outcomes-for-students-in-schools-with-concentrated-poverty/
 
-        Health and physical education. (2020). PA Department of Education. Retrieved from: 
-            https://www.education.pa.gov/Teachers%20-%20Administrators/Curriculum/HealthPhysicalEd/Pages/default.aspx 
+        Health and physical education. (2020). PA Department of Education. Retrieved from:
+            https://www.education.pa.gov/Teachers%20-%20Administrators/Curriculum/HealthPhysicalEd/Pages/default.aspx
 
 
         Leins, C. (2020). States with the most equitable school funding. U.S. News. Retrieved from:
-            https://www.usnews.com/news/best-states/articles/2020-01-21/states-with-the-most-equitable-school-funding#:~:text=The%2010%20Best%20U.S.%20States%20for%20Education&text=Vermont%20had%20the%20highest%20funding,the%20national%20average%20of%20%2414%2C046.&text=Arizona%2C%20Utah%2C%20Idaho%2C%20North,the%202016%2D2017%20school%20year. 
+            https://www.usnews.com/news/best-states/articles/2020-01-21/states-with-the-most-equitable-school-funding#:~:text=The%2010%20Best%20U.S.%20States%20for%20Education&text=Vermont%20had%20the%20highest%20funding,the%20national%20average%20of%20%2414%2C046.&text=Arizona%2C%20Utah%2C%20Idaho%2C%20North,the%202016%2D2017%20school%20year.
 
         Partelow, L., Yin, J. & Sargrad, S. (2020). Why K-12 education needs more federal stimulus funding. Center for American Progress. Retrieved from:
-            https://www.americanprogress.org/issues/education-k-12/reports/2020/07/21/487865/k-12-education-needs-federal-stimulus-funding/ 
-    """    
+            https://www.americanprogress.org/issues/education-k-12/reports/2020/07/21/487865/k-12-education-needs-federal-stimulus-funding/
+    """
     )
 
 ####################### model sections  #######################
@@ -1347,8 +1356,8 @@ def draw_v1_modified():
     ).project(
         type='albersUsa'
     ).properties(
-        width=1000,
-        height=700
+        width=graph_width*1.2,
+        height=graph_width/2
     )
 
     avg_time_v = alt.Chart(avg_time_df, title='Average Cost').mark_area(
@@ -1363,8 +1372,9 @@ def draw_v1_modified():
     ).transform_filter(
         select_state
     ).properties(
-        width=500,
-        height=300
+        width=graph_width/1.9,
+        height=graph_width/4
+        # height=200
     )
 
     sum_time_v = alt.Chart(avg_time_df, title='Total Cost').mark_area(
@@ -1379,99 +1389,100 @@ def draw_v1_modified():
     ).transform_filter(
         select_state
     ).properties(
-        width=500,
-        height=301
+        width=graph_width/1.9,
+        height=graph_width/4+1
+        # height=201
     )
 
     st.write(avg_v & (avg_time_v | sum_time_v))
 
 
 
-def draw_v1():
-    # slider for selecting specific years
-    cnt_df = pd.read_csv("data/loc_time_join.csv")
-
-    sum_avg_df = pd.read_csv("data/avg_loc_time_join.csv")
-
-    year = st.slider("Year",
-                     min_value = 2013,
-                     max_value = 2018,
-                     step = 1)
-
-    # A slider filter
-    # year_slider = alt.binding_range(min=2013, max=2018, step=1)
-    # slider_selection = alt.selection_single(bind=year_slider, fields=['Post year'])
-
-    # get count agg by the given year range
-    cnt_filter_df = cnt_df[cnt_df['Post year'] == year]
-
-    sum_avg_filter_df = sum_avg_df[sum_avg_df['Post Year'] == year]
-    #make a map
-    states = alt.topo_feature(data.us_10m.url, 'states')
-
-    highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
-
-    count_v = alt.Chart(
-        states
-    ).mark_geoshape(
-        stroke='gray',
-        strokeWidth=1
-    ).encode(
-        color = 'Count:Q',
-        tooltip=['State:N', 'Count:Q'],
-        stroke=alt.condition(highlight, alt.value('red'), alt.value('gray')),
-        strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(2), alt.StrokeWidthValue(1)),
-    ).transform_lookup(
-        lookup = 'id',
-        from_ = alt.LookupData(cnt_filter_df, 'id', ['Count', 'State'])
-    ).add_selection(
-        highlight
-    ).project(
-        type='albersUsa'
-    ).properties(
-        width=500,
-        height=500
-    )
-
-    sum_v = alt.Chart(
-        states
-    ).mark_geoshape(
-        stroke='#aaa',
-        strokeWidth=0.25
-    ).encode(
-        color = 'Sum:Q',
-        tooltip=['State:N', 'Sum:Q']
-    ).transform_lookup(
-        lookup = 'id',
-        from_ = alt.LookupData(sum_avg_filter_df, 'id', ['Sum', 'State'])
-    ).project(
-        type='albersUsa'
-    ).properties(
-        width=400,
-        height=200
-    )
-
-    avg_v = alt.Chart(
-        states
-    ).mark_geoshape(
-        stroke='#aaa',
-        strokeWidth=0.25
-    ).encode(
-        color = 'Average:Q',
-        tooltip=['State:N', 'Average:Q']
-    ).transform_lookup(
-        lookup = 'id',
-        from_ = alt.LookupData(sum_avg_filter_df, 'id', ['Average', 'State'])
-    ).project(
-        type='albersUsa'
-    ).properties(
-        width=400,
-        height=200
-    )
-    st.write(count_v)
-    st.write(sum_v)
-    st.write(avg_v)
-    return
+# def draw_v1():
+#     # slider for selecting specific years
+#     cnt_df = pd.read_csv("data/loc_time_join.csv")
+#
+#     sum_avg_df = pd.read_csv("data/avg_loc_time_join.csv")
+#
+#     year = st.slider("Year",
+#                      min_value = 2013,
+#                      max_value = 2018,
+#                      step = 1)
+#
+#     # A slider filter
+#     # year_slider = alt.binding_range(min=2013, max=2018, step=1)
+#     # slider_selection = alt.selection_single(bind=year_slider, fields=['Post year'])
+#
+#     # get count agg by the given year range
+#     cnt_filter_df = cnt_df[cnt_df['Post year'] == year]
+#
+#     sum_avg_filter_df = sum_avg_df[sum_avg_df['Post Year'] == year]
+#     #make a map
+#     states = alt.topo_feature(data.us_10m.url, 'states')
+#
+#     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
+#
+#     count_v = alt.Chart(
+#         states
+#     ).mark_geoshape(
+#         stroke='gray',
+#         strokeWidth=1
+#     ).encode(
+#         color = 'Count:Q',
+#         tooltip=['State:N', 'Count:Q'],
+#         stroke=alt.condition(highlight, alt.value('red'), alt.value('gray')),
+#         strokeWidth=alt.condition(highlight, alt.StrokeWidthValue(2), alt.StrokeWidthValue(1)),
+#     ).transform_lookup(
+#         lookup = 'id',
+#         from_ = alt.LookupData(cnt_filter_df, 'id', ['Count', 'State'])
+#     ).add_selection(
+#         highlight
+#     ).project(
+#         type='albersUsa'
+#     ).properties(
+#         width=500,
+#         height=500
+#     )
+#
+#     sum_v = alt.Chart(
+#         states
+#     ).mark_geoshape(
+#         stroke='#aaa',
+#         strokeWidth=0.25
+#     ).encode(
+#         color = 'Sum:Q',
+#         tooltip=['State:N', 'Sum:Q']
+#     ).transform_lookup(
+#         lookup = 'id',
+#         from_ = alt.LookupData(sum_avg_filter_df, 'id', ['Sum', 'State'])
+#     ).project(
+#         type='albersUsa'
+#     ).properties(
+#         width=400,
+#         height=200
+#     )
+#
+#     avg_v = alt.Chart(
+#         states
+#     ).mark_geoshape(
+#         stroke='#aaa',
+#         strokeWidth=0.25
+#     ).encode(
+#         color = 'Average:Q',
+#         tooltip=['State:N', 'Average:Q']
+#     ).transform_lookup(
+#         lookup = 'id',
+#         from_ = alt.LookupData(sum_avg_filter_df, 'id', ['Average', 'State'])
+#     ).project(
+#         type='albersUsa'
+#     ).properties(
+#         width=400,
+#         height=200
+#     )
+#     st.write(count_v)
+#     st.write(sum_v)
+#     st.write(avg_v)
+#     return
 
 def draw_v2():
     df = pd.read_csv("data/free_lunch_state_metro.csv")
@@ -1487,7 +1498,8 @@ def draw_v2():
                  'School Metro Type',
                  'School Percentage Free Lunch']
         ).properties(
-            width=1200,
+            width=graph_width*1.6
+            # width=1000,
         )
     st.write(v2)
     return
@@ -1509,6 +1521,9 @@ def draw_v3():
         select_year
     ).transform_filter(
         select_year
+    ).properties(
+        width=graph_width*1.3,
+        # height=400
     )
     sum_ = alt.Chart(
         df,
@@ -1521,6 +1536,10 @@ def draw_v3():
         select_year
     ).transform_filter(
         select_year
+    ).properties(
+        width=graph_width*1.3,
+        # width=graph_width,
+        # height=400
     )
 
     st.write(mean_)
@@ -1556,8 +1575,9 @@ def draw_v4():
     ).transform_filter(
         select_year
     ).properties(
-        width=500,
-        height=500
+        width=graph_width/2,
+        height=graph_width/1.6,
+        # height=500
     )
 
     g_line = alt.Chart(
@@ -1573,8 +1593,9 @@ def draw_v4():
     ).transform_filter(
         grade_selector
     ).properties(
-        width=500,
-        height=500
+        width=graph_width/2,
+        height=graph_width/1.6,
+        # height=500
     )
 
     r_histo = alt.Chart(
@@ -1593,8 +1614,10 @@ def draw_v4():
     ).transform_filter(
         select_year
     ).properties(
-        width=500,
-        height=500
+        width=graph_width/2,
+        height=graph_width/1.6,
+        # width=500,
+        # height=500
     )
 
     r_line = alt.Chart(
@@ -1610,8 +1633,10 @@ def draw_v4():
     ).transform_filter(
         resource_selector
     ).properties(
-        width=500,
-        height=500
+        width=graph_width/2,
+        height=graph_width/1.6,
+        # width=500,
+        # height=500
     )
 
     st.write(g_histo | g_line)
@@ -1631,6 +1656,10 @@ def draw_v5():
             alt.X('Post year:N'),
             alt.Y('Rate:Q', title='Rate(%)'),
             color = 'Project Current Status:N'
+    ).properties(
+        width=graph_width*1.5,
+        # width=graph_width,
+        # height=400
     )
 
     selectors = alt.Chart(rate).mark_point().encode(
@@ -1677,8 +1706,8 @@ def draw_v6():
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=700,
-        height=300
+        width=graph_width*1.5,
+        height=graph_width/2
     )
     st.write(v6)
 
@@ -1687,7 +1716,7 @@ def draw_v7():
     after_rate = pd.read_csv('data/successful_rate_2017_resource.csv')
 
     before = alt.Chart(before_rate,
-        title='Successful Rates with respect to Proposed Resource Types before 2017'
+        title='Successful Rates with respect to Resource Category before 2017'
     ).mark_bar().encode(
         y = alt.Y('Project Resource Category:N'),
         x=alt.X('Rate:Q', stack="normalize"),
@@ -1697,12 +1726,12 @@ def draw_v7():
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=300,
-        height=400
+        width=graph_width/3,
+        height=graph_width/2
     )
 
     after = alt.Chart(after_rate,
-        title='Successful Rates with respect to Proposed Resource Types after (including) 2017'
+        title='Successful Rates with respect to Resource Category after 2017'
     ).mark_bar().encode(
         y = 'Project Resource Category:N',
         x = alt.X('Rate:Q', stack="normalize"),
@@ -1712,10 +1741,13 @@ def draw_v7():
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=300,
-        height=400
+        width=graph_width/3,
+        height=graph_width/2
     )
 
+    # col1, col2 = st.beta_columns([1, 1])
+    # col1.write(before)
+    # col2.write(after)
     st.write(before | after)
 
 def draw_v8():
@@ -1731,8 +1763,10 @@ def draw_v8():
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=700,
-        height=300
+        width=graph_width*1.5,
+        height=graph_width/2
+        # width=700,
+        # height=300
     )
     st.write(v6)
 
@@ -1761,8 +1795,10 @@ def draw_v9():
     ).project(
         type='albersUsa'
     ).properties(
-        width=1000,
-        height=700
+        # width=graph_width,
+        width=graph_width*1.5,
+        height=graph_width/1.5
+        # height=700
     )
 
     st.write(v_9)
@@ -1794,21 +1830,23 @@ def draw_v10():
                   "Rate:Q",
                   "Project Current Status:N"]
     ).properties(
-        width=700,
-        height=500
+        width=graph_width*1.5,
+        height=graph_width/1.5
+        # width=700,
+        # height=500
     )
     st.write(v6)
 
-    ####################### main #######################
+####################### main #######################
 
 sections = {
-    'Description': draw_title,
+    'Introduction': draw_title,
     'Visualization': draw_narrative,
     'Model': draw_model,
     'Reference': draw_reference
 }
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 option = st.sidebar.selectbox(
     "Sections", list(sections.keys())
