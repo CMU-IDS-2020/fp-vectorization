@@ -723,13 +723,8 @@ def draw_narrative():
     draw_v5()
     st.markdown(
     """
-<<<<<<< HEAD
         In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools. 
         ### 2.2 Successful Rate under Grade levels and Resource Categories
-=======
-        In the line chart, the slopes for both fully funded and expired rates do not fluctuate much, where the fully funded rate keeps at around 72~78 percent. We did not include the dataset from 2018 in the line chart since it was not complete yet. We wish that the fully funded rates could elevate after donors take a glance over our visualizations and have a better understanding of learners’ needs at public schools.
-        ### Successful Rate under Grade levels and Resource Categories
->>>>>>> 897f9998d1e5de61146cd23a2b542c14d7196243
     """
     )
     draw_v6()
@@ -1305,7 +1300,8 @@ def draw_v1_modified():
     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
 
     avg_v = alt.Chart(
-        states
+        states,
+        title='Proposed Project Cost over States'
     ).mark_geoshape(
         stroke='black',
         strokeWidth=1
@@ -1328,7 +1324,7 @@ def draw_v1_modified():
         height=700
     )
 
-    avg_time_v = alt.Chart(avg_time_df).mark_area(
+    avg_time_v = alt.Chart(avg_time_df, title='Average Cost').mark_area(
         color="lightblue",
         line=True
     ).encode(
@@ -1344,7 +1340,7 @@ def draw_v1_modified():
         height=300
     )
 
-    sum_time_v = alt.Chart(avg_time_df).mark_area(
+    sum_time_v = alt.Chart(avg_time_df, title='Total Cost').mark_area(
         color="lightyellow",
         line=True
     ).encode(
@@ -1452,7 +1448,10 @@ def draw_v1():
 
 def draw_v2():
     df = pd.read_csv("data/free_lunch_state_metro.csv")
-    v2 = alt.Chart(df).mark_circle().encode(
+    v2 = alt.Chart(
+            df,
+            title='Free Lunch Rate with respect to School Metro Types and States'
+        ).mark_circle().encode(
             x=alt.X('School State:N'),
             y=alt.Y('School Metro Type:N'),
             size='School Percentage Free Lunch:Q',
@@ -1472,7 +1471,10 @@ def draw_v3():
     select_year = alt.selection_single(name="Year", fields=['Year'],
                                        bind=slider, init={'Year': 2013})
 
-    mean_ = alt.Chart(df).mark_bar().encode(
+    mean_ = alt.Chart(
+        df,
+        title='Average Donations over States'
+    ).mark_bar().encode(
         x=alt.X('Donor State:N'),
         y=alt.Y('Mean:Q'),
         tooltip = ['Donor State:N', 'Mean:Q']
@@ -1481,7 +1483,10 @@ def draw_v3():
     ).transform_filter(
         select_year
     )
-    sum_ = alt.Chart(df).mark_bar().encode(
+    sum_ = alt.Chart(
+        df,
+        title='Total Donations over States'
+    ).mark_bar().encode(
         x=alt.X('Donor State:N'),
         y=alt.Y('Sum:Q'),
         tooltip = ['Donor State:N', 'Sum:Q'],
@@ -1508,7 +1513,10 @@ def draw_v4():
     slider = alt.binding_range(min=2013, max=2018, step=1, name='Year')
     select_year = alt.selection_single(name="Year", fields=['Post year'],
                                        bind=slider, init={'Post year': 2017})
-    g_histo = alt.Chart(grade).mark_bar().encode(
+    g_histo = alt.Chart(
+        grade,
+        title='Proposed Project Costs with respect to School Grades'
+        ).mark_bar().encode(
         x= "Project Grade Level Category:N",
         y= "Project Cost:Q",
         color=alt.condition(grade_selector,
@@ -1525,7 +1533,10 @@ def draw_v4():
         height=500
     )
 
-    g_line = alt.Chart(grade).mark_line().encode(
+    g_line = alt.Chart(
+        grade,
+        title='Costs with respect to a School Grade over Years'
+    ).mark_line().encode(
         x = 'Post year:N',
         y = 'Project Cost:Q',
         color = alt.Color("Project Grade Level Category:N"),
@@ -1539,7 +1550,10 @@ def draw_v4():
         height=500
     )
 
-    r_histo = alt.Chart(resource).mark_bar().encode(
+    r_histo = alt.Chart(
+        resource,
+        title='Proposed Project Costs with respect to Requested Resource Types'
+    ).mark_bar().encode(
         x= "Project Resource Category:N",
         y= "Project Cost:Q",
         color=alt.condition(resource_selector,
@@ -1556,7 +1570,10 @@ def draw_v4():
         height=500
     )
 
-    r_line = alt.Chart(resource).mark_line().encode(
+    r_line = alt.Chart(
+        resource,
+        title='Costs with respect to a Resource Type over Years'
+    ).mark_line().encode(
         x = 'Post year:N',
         y = 'Project Cost:Q',
         color = alt.Color("Project Resource Category:N"),
@@ -1580,7 +1597,10 @@ def draw_v5():
     nearest = alt.selection(type='single', nearest=True, on='mouseover',
                             fields=['Post year'], empty='none')
 
-    line = alt.Chart(rate).mark_line().encode(
+    line = alt.Chart(
+            rate,
+            title='Successful Rates over Years'
+    ).mark_line().encode(
             alt.X('Post year:N'),
             alt.Y('Rate:Q', title='Rate(%)'),
             color = 'Project Current Status:N'
@@ -1618,7 +1638,10 @@ def draw_v5():
 
 def draw_v6():
     rate = pd.read_csv('data/successful_rate_grade.csv')
-    v6 = alt.Chart(rate).mark_bar().encode(
+    v6 = alt.Chart(
+        rate,
+        title='Successful Rates with respect to School Grades'
+    ).mark_bar().encode(
         y = 'Project Grade Level Category:N',
         x = alt.X('Rate:Q', stack="normalize"),
         order=alt.Order('Project Current Status:N', sort='descending'),
@@ -1636,7 +1659,9 @@ def draw_v7():
     before_rate = pd.read_csv('data/successful_rate_before_2017_resource.csv')
     after_rate = pd.read_csv('data/successful_rate_2017_resource.csv')
 
-    before = alt.Chart(before_rate).mark_bar().encode(
+    before = alt.Chart(before_rate,
+        title='Successful Rates with respect to Proposed Resource Types before 2017'
+    ).mark_bar().encode(
         y = alt.Y('Project Resource Category:N'),
         x=alt.X('Rate:Q', stack="normalize"),
         order=alt.Order('Project Current Status:N', sort='descending'),
@@ -1649,7 +1674,9 @@ def draw_v7():
         height=400
     )
 
-    after = alt.Chart(after_rate).mark_bar().encode(
+    after = alt.Chart(after_rate,
+        title='Successful Rates with respect to Proposed Resource Types after (including) 2017'
+    ).mark_bar().encode(
         y = 'Project Resource Category:N',
         x = alt.X('Rate:Q', stack="normalize"),
         color='Project Current Status:N',
@@ -1666,7 +1693,9 @@ def draw_v7():
 
 def draw_v8():
     rate = pd.read_csv('data/successful_rate_metro.csv')
-    v6 = alt.Chart(rate).mark_bar().encode(
+    v6 = alt.Chart(rate,
+        title='Successful Rates with respect to School Metro Types'
+    ).mark_bar().encode(
         y = 'School Metro Type:N',
         x = alt.X('Rate:Q', stack="normalize"),
         order=alt.Order('Project Current Status:N', sort='descending'),
@@ -1686,7 +1715,8 @@ def draw_v9():
     highlight = alt.selection_single(on='mouseover', fields=['id'], empty='none')
     states = alt.topo_feature(data.us_10m.url, 'states')
     v_9 = alt.Chart(
-        states
+        states,
+        title='Successful Rates over States'
     ).mark_geoshape(
         stroke='black',
         strokeWidth=1
@@ -1725,7 +1755,10 @@ def draw_v10():
                      '[8000,9000)', '[8000,9000)', '[9000,10000)',
                      '[9000,10000)', '[10000,inf)', '[10000,inf)']
     rate = pd.read_csv('data/successful_rate_cost_interval.csv')
-    v6 = alt.Chart(rate).mark_bar().encode(
+    v6 = alt.Chart(
+        rate,
+        title='Successful Rates with respect to Cost Intervals'
+    ).mark_bar().encode(
         y = alt.Y('Cost Interval:N',sort=categoryNames),
         x = alt.X('Rate:Q', stack="normalize"),
         order=alt.Order('Project Current Status:N', sort='descending'),
