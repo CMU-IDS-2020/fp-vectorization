@@ -54,9 +54,9 @@ english_numbers = ["One", "Two", "Three", "Four", "Five",
                    "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety",
                    "Thousand", "Million", "Billion"]
 
-lr_weights_essay = {'X_essay_len': 0.00037009498147819186,
- 'X_essay_?!': 0.022862047528095543,
- 'X_essay_numbers': 0.01710425182793344}
+lr_weights_essay = {'Description Length': 0.00037009498147819186,
+ 'Number of ? and !': 0.022862047528095543,
+ 'Number of Numerical Expressions': 0.01710425182793344}
 
 lr_weights_category = { 'Literacy': -0.02675414594610817,
  'Mathematics': -0.024337049153145347,
@@ -606,13 +606,15 @@ def draw_narrative():
         ## 1. Donation Cost Analysis
 
         ### 1.1 How did project cost distribute geographically?
-        Usage: The color of the map indicates the average cost of projects in
-        each state. The tooltip has extra information about the sum cost of
-        projects. Further, by clicking on a specific state, its average and
-        sum project costs are shown in the following line charts.
-
     """
     )
+    st.info(
+    """
+    Usage: The color of the map indicates the average cost of projects in
+    each state. The tooltip has extra information about the sum cost of
+    projects. Further, by clicking on a specific state, its average and
+    sum project costs are shown in the following line charts.
+    """)
     draw_v1_modified()
 
     st.markdown(
@@ -646,9 +648,13 @@ def draw_narrative():
         their public classroom projects.
 
         ## 1.2 How did requested cost distribute with respect to different categories?
-        Usage: By clicking on a bar in the left char, its value change over the years will be demonstrated on the right chart.
     """
     )
+    st.info(
+    """
+    Usage: By clicking on a bar in the left char, its value change over the years will be demonstrated on the right chart.
+    """)
+
     # draw_v1()
     draw_v4()
     st.markdown(
@@ -893,7 +899,7 @@ def model_display():
         * project categories
         * resource categories
 
-        We split the dataset into training set (80%) and test set (20%), and then we downsample the majority class to make the training dataset balance, and we calculated F1-score on the test set. The current f1-score is 0.77.
+        We split the dataset into training set (80%) and test set (20%), and then we downsample the majority class to make the training dataset balance, and we calculated F1-score on the test set. The current F1-score is 0.77.
 
         We use all data from 2016 to 2018 to train our model. From our training result, we have discovered follwoing patterns:
 
@@ -924,7 +930,7 @@ def model_display():
 
     * length of the project description
     * number of '?' and '!' in the project description
-    * number of numerical expressions in the project
+    * number of numerical expressions in the project description
     * 85 high frequency words, such as student, learn, hungry, healthy
 
     Below are their corresponding weights learned by our model.
@@ -940,7 +946,7 @@ def model_display():
             alt.value("steelblue"),  # The positive color
             alt.value("orange")  # The negative color
         )
-    ).properties(width=600)
+    ).properties(width=graph_width)
     st.write(chart)
 
     chart = alt.Chart(word_df).mark_bar().encode(
@@ -952,7 +958,7 @@ def model_display():
             alt.value("steelblue"),  # The positive color
             alt.value("orange")  # The negative color
         )
-    ).properties(width=1000)
+    ).properties(width=graph_width*1.5)
     st.write(chart)
 
     st.markdown(
@@ -972,7 +978,7 @@ def model_display():
             alt.value("steelblue"),  # The positive color
             alt.value("orange")  # The negative color
         )
-    ).properties(width=600)
+    ).properties(width=graph_width)
     st.write(chart)
 
     st.markdown(
@@ -992,7 +998,7 @@ def model_display():
             alt.value("steelblue"),  # The positive color
             alt.value("orange")  # The negative color
         )
-    ).properties(width=600)
+    ).properties(width=graph_width)
     st.write(chart)
 
 
@@ -1009,17 +1015,16 @@ def model_proj_desc_interaction():
         ### Please enter your project proposal here!
     """
     )
-
     # https://docs.streamlit.io/en/latest/api.html#streamlit.beta_columns
     description = st.text_area("Project description", value=sample) #, value="Input your project description here!")
     col1, col2, col3 = st.beta_columns([1, 1, 1])
     start = col1.date_input("Project start date", datetime.date(2017, 1, 1))
     end = col2.date_input("Project end date", datetime.date(2017, 5, 1))
-    cost = col3.number_input("Project cost")
+    cost = col3.number_input("Project cost", 3000)
 
     col1, col2 = st.beta_columns([1, 1])
-    subcat = col1.multiselect("Project category", subcategories)
-    rescat = col2.multiselect("Resource category", resources)
+    subcat = col1.multiselect("Project category", subcategories, default="Visual Arts")
+    rescat = col2.multiselect("Resource category", resources, default="Art Supplies")
 
     submitted = st.button("Submit Project Proposal")
     if submitted:
@@ -1655,6 +1660,7 @@ def draw_v5():
             color = 'Project Current Status:N'
     ).properties(
         width=graph_width*1.5,
+        height=graph_width/1.5,
         # width=graph_width,
         # height=400
     )
@@ -1682,11 +1688,7 @@ def draw_v5():
 
     v5 = alt.layer(
         line, selectors, points, rules, text
-    ).properties(
-        width=1000,
-        height=500
     )
-
     st.write(v5)
 
 def draw_v6():
