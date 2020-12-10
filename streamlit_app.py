@@ -550,7 +550,7 @@ def load_data():
 def draw_title():
     st.markdown(
     """
-        # Donation statistics analysis
+        # Donation Statistics Analysis
 
         Team members:
         - Xinwen Liu (xinwenl), Xinyu Lin (xinyulin), Yuxi Luo (yuxiluo), Shaobo Guan (shaobog)
@@ -558,6 +558,10 @@ def draw_title():
         [Github repository](https://github.com/CMU-IDS-2020/fp-vectorization)
 
         [Design Review slides](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/DesignReview.pdf)
+
+        [Video](https://drive.google.com/file/d/1Mi2zYTQxJhcHAJW0ulg_B2-tZ2nV042W/view?usp=sharing)
+
+        [Final Report](https://github.com/CMU-IDS-2020/fp-vectorization/blob/main/documents/Report.pdf)
     """
     )
     """
@@ -1336,7 +1340,7 @@ def draw_v1_modified():
 
     states = alt.topo_feature(data.us_10m.url, 'states')
 
-    highlight = alt.selection_single(fields=['State'], 
+    highlight = alt.selection_single(fields=['State'],
                                      empty='none',
                                      init={'State': 'California'})
 
